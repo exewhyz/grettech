@@ -12,15 +12,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 const data = {
-  facebookLink: "https://facebook.com/mvpblocks",
-  instaLink: "https://instagram.com/mvpblocks",
-  twitterLink: "https://twitter.com/mvpblocks",
-  githubLink: "https://github.com/mvpblocks",
-  dribbbleLink: "https://dribbble.com/mvpblocks",
+  facebookLink: "https://www.facebook.com/",
+  instaLink: "https://www.instagram.com/",
+  twitterLink: "https://twitter.com/",
+  dribbbleLink: "https://dribbble.com/",
+  githubLink: "https://github.com/",
   services: {
     webdev: "/web-development",
     webdesign: "/web-design",
-    marketing: "/marketing",
+    appdev: "/app-development",
     googleads: "/google-ads",
   },
   about: {
@@ -35,15 +35,15 @@ const data = {
     livechat: "/live-chat",
   },
   contact: {
-    email: "hello@mvpblocks.com",
-    phone: "+91 8637373116",
-    address: "Kolkata, West Bengal, India",
+    email: "contact@grettech.com",
+    phone: "+91 8840390107",
+    address: "14th Cross Rd., Vinayaka Layout, KR Puram, Bangalore - 560049",
   },
   company: {
-    name: "Mvpblocks",
+    name: "GretTech",
     description:
-      "Building beautiful and functional web experiences with modern technologies. We help startups and businesses create their digital presence.",
-    logo: "/logo.webp",
+      "We craft modern, scalable, and visually stunning web solutions to help businesses grow digitally.",
+    logo: "/logo.png",
   },
 };
 
@@ -65,161 +65,148 @@ const aboutLinks = [
 const serviceLinks = [
   { text: "Web Development", href: data.services.webdev },
   { text: "Web Design", href: data.services.webdesign },
-  { text: "Marketing", href: data.services.marketing },
+  { text: "App Development", href: data.services.appdev },
   { text: "Google Ads", href: data.services.googleads },
 ];
 
-// const helpfulLinks = [
-//   { text: "FAQs", href: data.help.faqs },
-//   { text: "Support", href: data.help.support },
-//   { text: "Live Chat", href: data.help.livechat, hasIndicator: true },
-// ];
-
 const contactInfo = [
-  { icon: Mail, text: data.contact.email },
-  { icon: Phone, text: data.contact.phone },
-  { icon: MapPin, text: data.contact.address, isAddress: true },
+  { icon: Mail, text: data.contact.email, type: "email" },
+  { icon: Phone, text: data.contact.phone, type: "phone" },
+  {
+    icon: MapPin,
+    text: data.contact.address,
+    type: "address",
+  },
 ];
 
 export default function WebAppexFooter() {
   return (
-    <footer className="bg-secondary dark:bg-secondary/20 mt-16 w-full place-self-end rounded-t-xl relative">
-      <div className="mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_2fr]">
-          <div>
-            <div className="text-primary flex justify-center gap-2 sm:justify-start">
-              <Image
-                width={32}
-                height={32}
-                src={data.company.logo || "/logo.png"}
-                alt="logo"
-                className="h-8 w-8 rounded-full"
-              />
-              <span className="text-2xl font-semibold">
-                {data.company.name}
-              </span>
-            </div>
+    <>
+      {/* Gradient divider */}
+      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
 
-            <p className="text-foreground/50 mt-6 max-w-md text-center leading-relaxed sm:max-w-xs sm:text-left">
-              {data.company.description}
-            </p>
+      <footer className="relative bg-white text-gray-600 dark:bg-black dark:text-muted-foreground">
+        {/* Subtle background gradient overlay (only in dark mode) */}
+        <div className="absolute inset-0 pointer-events-none dark:bg-gradient-to-t dark:from-primary/5 dark:via-transparent dark:to-transparent" />
 
-            <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
-              {socialLinks.map(({ icon: Icon, label, href }) => (
-                <li key={label}>
-                  <Link
-                    prefetch={false}
-                    href={href}
-                    className="text-primary hover:text-primary/80 transition"
-                  >
-                    <span className="sr-only">{label}</span>
-                    <Icon className="size-6" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="relative mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_2fr]">
+            {/* Company Logo + Info */}
+            <div>
+              <div className="flex items-center justify-center sm:justify-start gap-3">
+                {/* <Image
+                  width={50}
+                  height={50}
+                  src={data.company.logo}
+                  alt="logo"
+                  className="h-10 w-10 rounded-full"
+                /> */}
+                <Link
+                  href="/"
+                  className="font-medium text-2xl text-black dark:text-white "
+                >
+                  Gret
+                  <span className="text-primary text-3xl font-playfair">
+                    Tech
+                  </span>
+                </Link>
+              </div>
 
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:col-span-">
-            <div className="text-center sm:text-left">
-              <p className="text-lg font-medium">About Us</p>
-              <ul className="mt-8 space-y-4 text-sm">
-                {aboutLinks.map(({ text, href }) => (
-                  <li key={text}>
-                    <a
-                      className="text-secondary-foreground/70 transition"
+              <p className="mt-6 max-w-md text-center leading-relaxed sm:text-left text-gray-600 dark:text-muted-foreground">
+                {data.company.description}
+              </p>
+
+              <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
+                {socialLinks.map(({ icon: Icon, label, href }) => (
+                  <li key={label}>
+                    <Link
                       href={href}
+                      className="text-gray-600 hover:text-primary dark:text-muted-foreground dark:hover:text-primary transition"
                     >
-                      {text}
-                    </a>
+                      <span className="sr-only">{label}</span>
+                      <Icon className="size-6" />
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="text-center sm:text-left">
-              <p className="text-lg font-medium">Our Services</p>
-              <ul className="mt-8 space-y-4 text-sm">
-                {serviceLinks.map(({ text, href }) => (
-                  <li key={text}>
-                    <a
-                      className="text-secondary-foreground/70 transition"
-                      href={href}
-                    >
-                      {text}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* <div className="text-center sm:text-left">
-              <p className="text-lg font-medium">Helpful Links</p>
-              <ul className="mt-8 space-y-4 text-sm">
-                {helpfulLinks.map(({ text, href, hasIndicator }) => (
-                  <li key={text}>
-                    <a
-                      href={href}
-                      className={`${
-                        hasIndicator
-                          ? 'group flex justify-center gap-1.5 sm:justify-start'
-                          : 'text-secondary-foreground/70 transition'
-                      }`}
-                    >
-                      <span className="text-secondary-foreground/70 transition">
+            {/* Footer Links */}
+            <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-3">
+              <div>
+                <p className="text-lg font-semibold text-gray-900 dark:text-white">
+                  About Us
+                </p>
+                <ul className="mt-6 space-y-3 text-sm">
+                  {aboutLinks.map(({ text, href }) => (
+                    <li key={text}>
+                      <a href={href} className="hover:text-primary transition">
                         {text}
-                      </span>
-                      {hasIndicator && (
-                        <span className="relative flex size-2">
-                          <span className="bg-primary absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" />
-                          <span className="bg-primary relative inline-flex size-2 rounded-full" />
-                        </span>
-                      )}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div> */}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-            <div className="text-center sm:text-left">
-              <p className="text-lg font-medium">Contact Us</p>
-              <ul className="mt-8 space-y-4 text-sm">
-                {contactInfo.map(({ icon: Icon, text, isAddress }) => (
-                  <li key={text}>
-                    <a
-                      className="flex items-center justify-center gap-1.5 sm:justify-start"
-                      href="#"
-                    >
-                      <Icon className="text-primary size-5 shrink-0 shadow-sm" />
-                      {isAddress ? (
-                        <address className="text-secondary-foreground/70 -mt-0.5 flex-1 not-italic transition">
-                          {text}
-                        </address>
-                      ) : (
-                        <span className="text-secondary-foreground/70 flex-1 transition">
-                          {text}
-                        </span>
-                      )}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <div>
+                <p className="text-lg font-semibold text-gray-900 dark:text-white">
+                  Our Services
+                </p>
+                <ul className="mt-6 space-y-3 text-sm">
+                  {serviceLinks.map(({ text, href }) => (
+                    <li key={text}>
+                      <a href={href} className="hover:text-primary transition">
+                        {text}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <p className="text-lg font-semibold text-gray-900 dark:text-white">
+                  Contact Us
+                </p>
+                <ul className="mt-6 space-y-3 text-sm">
+                  {contactInfo.map(({ icon: Icon, text, type }) => (
+                    <li key={text}>
+                      <div className="flex items-center gap-2">
+                        <Icon className="text-primary size-5 shrink-0" />
+                        {type === "address" ? (
+                          <address className="not-italic">{text}</address>
+                        ) : (
+                          <Link
+                            href={
+                              type === "phone"
+                                ? `tel:${text}`
+                                : `mailto:${text}`
+                            }
+                            className="hover:text-primary transition hover:underline"
+                          >
+                            {text}
+                          </Link>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom bar */}
+          <div className="mt-12 pt-6 border-t border-gray-200 dark:border-white/10">
+            <div className="text-center sm:flex sm:justify-between sm:text-left">
+              <p className="text-sm text-gray-500 dark:text-muted-foreground">
+                <span className="block sm:inline">All rights reserved.</span>
+              </p>
+              <p className="mt-4 text-sm text-gray-500 dark:text-muted-foreground sm:order-first sm:mt-0">
+                &copy; {new Date().getFullYear()} {data.company.name}
+              </p>
             </div>
           </div>
         </div>
-
-        <div className="mt-12 border-t pt-6">
-          <div className="text-center sm:flex sm:justify-between sm:text-left">
-            <p className="text-sm">
-              <span className="block sm:inline">All rights reserved.</span>
-            </p>
-
-            <p className="text-secondary-foreground/70 mt-4 text-sm transition sm:order-first sm:mt-0">
-              &copy; 2025 {data.company.name}
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 }

@@ -1,54 +1,54 @@
-'use client';
+"use client";
 
-import React, { useEffect } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
-import { cn } from '@/lib/utils';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { motion } from 'motion/react';
-import { Quote } from 'lucide-react';
+import React, { useEffect } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import { cn } from "@/lib/utils";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { motion } from "motion/react";
+import { Quote } from "lucide-react";
 
 const defaultTestimonials = [
   {
-    text: 'MVPBlocks has completely changed the way I build UIs. Copy-paste, done. No more design stress.',
-    imageSrc: '/assets/avatars/avatar-1.webp',
-    name: 'Arjun Mehta',
-    username: '@arjdev',
-    role: 'Frontend Developer',
+    text: "Working with your team was seamless. Our website went from idea to launch in record time without compromising on quality.",
+    imageSrc: "/assets/avatars/avatar-1.webp",
+    name: "Arjun Mehta",
+    username: "@arjdev",
+    role: "Startup Founder",
   },
   {
-    text: 'Honestly shocked at how smooth the animations and styling are out of the box. Just works.',
-    imageSrc: '/assets/avatars/avatar-2.webp',
-    name: 'Sara Lin',
-    username: '@sara.codes',
-    role: 'UX Designer',
+    text: "The mobile app they delivered exceeded our expectations — fast, modern UI and bug-free. Clients loved it from day one.",
+    imageSrc: "/assets/avatars/avatar-2.webp",
+    name: "Sara Lin",
+    username: "@sara.codes",
+    role: "Product Manager",
   },
   {
-    text: 'Our team launched a client site in 2 days using MVPBlocks. Saved so much time.',
-    imageSrc: '/assets/avatars/avatar-3.webp',
-    name: 'Devon Carter',
-    username: '@devninja',
-    role: 'Product Manager',
+    text: "Our e-commerce platform was built and deployed quickly, helping us boost sales. Their technical expertise is unmatched.",
+    imageSrc: "/assets/avatars/avatar-3.webp",
+    name: "Devon Carter",
+    username: "@devninja",
+    role: "Business Owner",
   },
   {
-    text: 'Plugged a few blocks into our existing codebase and everything blended perfectly. Massive W.',
-    imageSrc: '/assets/avatars/avatar-4.webp',
-    name: 'Priya Shah',
-    username: '@priyacodes',
-    role: 'Full Stack Developer',
+    text: "We needed a custom dashboard for our team. They built it with precision and scalability in mind. Huge time-saver!",
+    imageSrc: "/assets/avatars/avatar-4.webp",
+    name: "Priya Shah",
+    username: "@priyacodes",
+    role: "Operations Head",
   },
   {
-    text: 'Found a beautiful hero section, dropped it into V0, tweaked copy, and shipped in 15 minutes.',
-    imageSrc: '/assets/avatars/avatar-5.webp',
-    name: 'Leo Martin',
-    username: '@leobuilds',
-    role: 'Startup Founder',
+    text: "From wireframes to deployment, the process was smooth. They handled design, development, and deployment all in one.",
+    imageSrc: "/assets/avatars/avatar-5.webp",
+    name: "Leo Martin",
+    username: "@leobuilds",
+    role: "Entrepreneur",
   },
   {
-    text: 'MVPBlocks helped us prototype multiple landing pages without writing CSS once.',
-    imageSrc: '/assets/avatars/avatar-6.webp',
-    name: 'Chloe Winters',
-    username: '@chloewinters',
-    role: 'UI Designer',
+    text: "Their support team is amazing — always available, always helpful. We now rely on them for all our tech projects.",
+    imageSrc: "/assets/avatars/avatar-6.webp",
+    name: "Chloe Winters",
+    username: "@chloewinters",
+    role: "Marketing Lead",
   },
 ];
 
@@ -68,15 +68,15 @@ interface TestimonialProps {
 
 export default function TestimonialsCarousel({
   testimonials = defaultTestimonials,
-  title = 'What our users say',
-  subtitle = 'From intuitive design to powerful features, our components have become essential tools for developers around the world.',
+  title = "What our users say",
+  subtitle = "From intuitive design to powerful features, our components have become essential tools for developers around the world.",
   autoplaySpeed = 3000,
   className,
 }: TestimonialProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
-    align: 'center',
-    containScroll: 'trimSnaps',
+    align: "center",
+    containScroll: "trimSnaps",
     dragFree: true,
   });
 
@@ -96,7 +96,9 @@ export default function TestimonialsCarousel({
 
   return (
     <section
-      className={cn('relative overflow-hidden py-16 md:py-24', className)}
+      aria-label="Testimonials"
+      id="testimonials"
+      className={cn("relative overflow-hidden py-16 md:py-24", className)}
     >
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.2),transparent_60%)]" />
@@ -140,7 +142,7 @@ export default function TestimonialsCarousel({
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="border-border from-secondary/20 to-card relative h-full w-fit rounded-2xl border bg-gradient-to-b p-6 shadow-md backdrop-blur-sm"
+                  className="border-border from-secondary/20 to-card relative flex h-full min-h-[320px] w-[360px] flex-col rounded-2xl border bg-gradient-to-b p-6 shadow-md backdrop-blur-sm"
                 >
                   {/* Enhanced decorative gradients */}
                   <div className="from-primary/15 to-card absolute -top-5 -left-5 -z-10 h-40 w-40 rounded-full bg-gradient-to-b blur-md" />

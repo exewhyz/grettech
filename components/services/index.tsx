@@ -1,56 +1,56 @@
 import {
   Code,
-  Terminal,
+  Smartphone,
+  Globe,
   Paintbrush,
   Rocket,
-  Book,
-  PlusCircle,
+  Headphones,
 } from 'lucide-react';
 
 const features = [
   {
-    icon: <Code className="h-6 w-6" />,
-    title: 'Developer-Friendly',
-    desc: 'Tailored for developers to create and iterate fast, with minimal overhead and maximum flexibility.',
+    icon: <Globe className="h-6 w-6" />,
+    title: 'Web Development',
+    desc: 'Responsive, scalable, and high-performing websites built with the latest technologies.',
   },
   {
-    icon: <Terminal className="h-6 w-6" />,
-    title: 'CLI Support',
-    desc: 'Command-line interface support for seamless development and workflow integration.',
+    icon: <Smartphone className="h-6 w-6" />,
+    title: 'App Development',
+    desc: 'iOS & Android apps tailored to your business needs with seamless user experiences.',
   },
   {
     icon: <Paintbrush className="h-6 w-6" />,
-    title: 'Easily Customizable',
-    desc: 'Every block is built to be editable. From layout to logic, style to structure—make it your own.',
+    title: 'UI/UX Design',
+    desc: 'Clean, modern, and user-friendly designs that keep your customers engaged.',
   },
   {
     icon: <Rocket className="h-6 w-6" />,
-    title: 'v0 Support',
-    desc: 'Launch fast with confidence. Perfect for MVPs, prototypes, and weekend projects.',
+    title: 'MVP Development',
+    desc: 'Get your idea to market quickly with lean, scalable MVP solutions.',
   },
   {
-    icon: <Book className="h-6 w-6" />,
-    title: 'Full Documentation',
-    desc: 'Comprehensive documentation to understand every feature and maximize your development experience.',
+    icon: <Code className="h-6 w-6" />,
+    title: 'Custom Solutions',
+    desc: 'From APIs to dashboards, we build custom digital solutions to streamline your workflow.',
   },
   {
-    icon: <PlusCircle className="h-6 w-6" />,
-    title: 'Contribute Yours',
-    desc: 'Add your own blocks to the library and become part of the MVPBlocks community.',
+    icon: <Headphones className="h-6 w-6" />,
+    title: 'Ongoing Support',
+    desc: 'Dedicated support and maintenance to ensure your website or app keeps running smoothly.',
   },
 ];
+
 export default function Services() {
   return (
-    <section className="relative py-14">
+    <section id="services" className="relative py-14">
       <div className="mx-auto max-w-screen-xl px-4 md:px-8">
         <div className="relative mx-auto max-w-2xl sm:text-center">
           <div className="relative z-10">
             <h3 className="font-geist mt-4 text-3xl font-normal tracking-tighter sm:text-4xl md:text-5xl">
-              Let’s help build your MVP
+              Our Services
             </h3>
             <p className="font-geist text-foreground/60 mt-3">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              congue, nisl eget molestie varius, enim ex faucibus purus.
+              We design and develop high-performing websites and apps to help your business grow and succeed online.
             </p>
           </div>
           <div
@@ -61,13 +61,15 @@ export default function Services() {
             }}
           ></div>
         </div>
+
         <hr className="bg-foreground/30 mx-auto mt-5 h-px w-1/2" />
+
         <div className="relative mt-12">
           <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((item, idx) => (
               <li
                 key={idx}
-                className="transform-gpu space-y-3 rounded-xl border bg-transparent p-4 [box-shadow:0_-20px_80px_-20px_#ff7aa42f_inset]"
+                className="transform-gpu space-y-3 rounded-xl border bg-transparent p-6 [box-shadow:0_-20px_80px_-20px_#ff7aa42f_inset]"
               >
                 <div className="text-primary w-fit transform-gpu rounded-full border p-4 [box-shadow:0_-20px_80px_-20px_#ff7aa43f_inset] dark:[box-shadow:0_-20px_80px_-20px_#ff7aa40f_inset]">
                   {item.icon}

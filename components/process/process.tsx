@@ -1,47 +1,47 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { cn } from '@/lib/utils';
-import { Rocket, Code, Paintbrush } from 'lucide-react';
-import Image from 'next/image';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { cn } from "@/lib/utils";
+import { Rocket, Code, Paintbrush } from "lucide-react";
+import Image from "next/image";
 
 const features = [
   {
-    step: 'Step 1',
-    title: 'Build Faster',
+    step: "Step 1",
+    title: "Discover & Plan",
     content:
-      'Create your MVP in record time with our pre-built blocks and components.',
+      "We start by understanding your business goals, audience, and requirements to craft a clear roadmap for your project.",
     icon: <Rocket className="text-primary h-6 w-6" />,
     image:
-      'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop',
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2070&auto=format&fit=crop",
   },
   {
-    step: 'Step 2',
-    title: 'Customize Easily',
+    step: "Step 2",
+    title: "Design & Develop",
     content:
-      'Tailor every component to your needs with our intuitive design system and flexible architecture.',
+      "Our team designs engaging interfaces and develops scalable, high-performance websites and apps tailored to your brand.",
     icon: <Paintbrush className="text-primary h-6 w-6" />,
     image:
-      'https://images.unsplash.com/photo-1618761714954-0b8cd0026356?q=80&w=2070&auto=format&fit=crop',
+      "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=2070&auto=format&fit=crop",
   },
   {
-    step: 'Step 3',
-    title: 'Deploy Confidently',
+    step: "Step 3",
+    title: "Test & Launch",
     content:
-      'Launch your product with confidence using our optimized, responsive, and accessible components.',
+      "We rigorously test for quality, performance, and security before deploying your solution with confidence.",
     icon: <Code className="text-primary h-6 w-6" />,
     image:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop",
   },
   {
-    step: 'Step 4',
-    title: 'Add Yours!',
+    step: "Step 4",
+    title: "Support & Grow",
     content:
-      'Contribute your own blocks and become part of the MVPBlocks community.',
+      "After launch, we provide continuous support, updates, and enhancements to help your business scale.",
     icon: <Code className="text-primary h-6 w-6" />,
     image:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2070&auto=format&fit=crop",
   },
 ];
 
@@ -63,23 +63,23 @@ export default function ProcessSteps() {
   }, [progress]);
 
   return (
-    <div className={'p-8 md:p-12'}>
+    <section id="process" className={"p-8 md:p-12"}>
       <div className="mx-auto w-full max-w-7xl">
         <div className="relative mx-auto mb-12 max-w-2xl sm:text-center">
           <div className="relative z-10">
             <h2 className="font-geist text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
-              Build Your MVP in Three Steps
+              Our 4-Step Process
             </h2>
             <p className="font-geist text-foreground/60 mt-3">
-              MVPBlocks helps you create, customize, and deploy your product
-              faster than ever before.
+              From strategy to launch, Grettech handles design, development, and
+              growth—end to end.
             </p>
           </div>
           <div
             className="absolute inset-0 mx-auto h-44 max-w-xs blur-[118px]"
             style={{
               background:
-                'linear-gradient(152.92deg, rgba(192, 15, 102, 0.2) 4.54%, rgba(192, 11, 109, 0.26) 34.2%, rgba(192, 15, 102, 0.1) 77.55%)',
+                "linear-gradient(152.92deg, rgba(192, 15, 102, 0.2) 4.54%, rgba(192, 11, 109, 0.26) 34.2%, rgba(192, 15, 102, 0.1) 77.55%)",
             }}
           ></div>
         </div>
@@ -101,10 +101,10 @@ export default function ProcessSteps() {
               >
                 <motion.div
                   className={cn(
-                    'flex h-12 w-12 items-center justify-center rounded-full border-2 md:h-14 md:w-14',
+                    "flex h-12 w-12 items-center justify-center rounded-full border-2 md:h-14 md:w-14",
                     index === currentFeature
-                      ? 'border-primary bg-primary/10 text-primary scale-110 [box-shadow:0_0_15px_rgba(192,15,102,0.3)]'
-                      : 'border-muted-foreground bg-muted',
+                      ? "border-primary bg-primary/10 text-primary scale-110 [box-shadow:0_0_15px_rgba(192,15,102,0.3)]"
+                      : "border-muted-foreground bg-muted"
                   )}
                 >
                   {feature.icon}
@@ -124,7 +124,7 @@ export default function ProcessSteps() {
 
           <div
             className={cn(
-              'border-primary/20 relative order-1 h-[200px] overflow-hidden rounded-xl border [box-shadow:0_5px_30px_-15px_rgba(192,15,102,0.3)] md:order-2 md:h-[300px] lg:h-[400px]',
+              "border-primary/20 relative order-1 h-[200px] overflow-hidden rounded-xl border [box-shadow:0_5px_30px_-15px_rgba(192,15,102,0.3)] md:order-2 md:h-[300px] lg:h-[400px]"
             )}
           >
             <AnimatePresence mode="wait">
@@ -137,7 +137,7 @@ export default function ProcessSteps() {
                       initial={{ y: 100, opacity: 0, rotateX: -20 }}
                       animate={{ y: 0, opacity: 1, rotateX: 0 }}
                       exit={{ y: -100, opacity: 0, rotateX: 20 }}
-                      transition={{ duration: 0.5, ease: 'easeInOut' }}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
                     >
                       <Image
                         src={feature.image}
@@ -154,12 +154,12 @@ export default function ProcessSteps() {
                         </span>
                       </div>
                     </motion.div>
-                  ),
+                  )
               )}
             </AnimatePresence>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

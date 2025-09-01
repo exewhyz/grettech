@@ -17,20 +17,32 @@ import { ThemeToggle } from "../theme-toggle";
 export function WebAppexNavbar({ className }: { className?: string }) {
   const navItems = [
     {
-      name: "Features",
-      link: "#features",
+      name: "Services",
+      link: "/#services",
     },
     {
-      name: "Pricing",
-      link: "#pricing",
+      name: "About",
+      link: "/#about",
     },
     {
-      name: "Contact",
-      link: "#contact",
+      name: "Process",
+      link: "/#process",
+    },
+    {
+      name: "Testimonials",
+      link: "/#testimonials",
     },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("resize", () => setIsMobileMenuOpen(false));
+  }
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", () => setIsMobileMenuOpen(false));
+  }
 
   return (
     <div className={cn(className, "relative w-full")}>
@@ -43,7 +55,7 @@ export function WebAppexNavbar({ className }: { className?: string }) {
             <NavbarButton variant="secondary">
               <ThemeToggle />
             </NavbarButton>
-            <NavbarButton variant="primary">Book a call</NavbarButton>
+            <NavbarButton variant="primary">Contact Us</NavbarButton>
           </div>
         </NavBody>
 
@@ -74,17 +86,17 @@ export function WebAppexNavbar({ className }: { className?: string }) {
             <div className="flex w-full flex-col gap-4">
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
+                variant="secondary"
+                className="w-full flex gap-2 items-center justify-center"
               >
-                Login
+                <ThemeToggle showThemeName={true} />
               </NavbarButton>
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
               >
-                Book a call
+                Contact Us
               </NavbarButton>
             </div>
           </MobileNavMenu>

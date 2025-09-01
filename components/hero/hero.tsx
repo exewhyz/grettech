@@ -1,89 +1,171 @@
-'use client';
+"use client";
 
-import { easeInOut, motion } from 'motion/react';
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
-import { Pacifico } from 'next/font/google';
-import { cn } from '@/lib/utils';
-import Image from 'next/image';
+import { easeInOut, motion } from "motion/react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { Pacifico } from "next/font/google";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const pacifico = Pacifico({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-pacifico',
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-pacifico",
 });
 
-function ElegantShape({
+// ----------------- Shape Components -----------------
+
+// Animated Circle Ring
+function AnimatedRing({
   className,
   delay = 0,
-  width = 400,
-  height = 100,
-  rotate = 0,
-  gradient = 'from-white/[0.08]',
+  size = 200,
+  gradient = "from-white/20 to-transparent",
 }: {
   className?: string;
   delay?: number;
-  width?: number;
-  height?: number;
-  rotate?: number;
+  size?: number;
   gradient?: string;
 }) {
   return (
     <motion.div
-      initial={{
-        opacity: 0,
-        y: -150,
-        rotate: rotate - 15,
-      }}
-      animate={{
-        opacity: 1,
-        y: 0,
-        rotate: rotate,
-      }}
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
       transition={{
-        duration: 2.4,
+        duration: 2,
         delay,
-        ease: [0.23, 0.86, 0.39, 0.96],
-        opacity: { duration: 1.2 },
+        ease: easeInOut,
       }}
-      className={cn('absolute', className)}
+      className={cn("absolute", className)}
     >
       <motion.div
-        animate={{
-          y: [0, 15, 0],
-        }}
-        transition={{
-          duration: 12,
-          repeat: Number.POSITIVE_INFINITY,
-          ease: 'easeInOut',
-        }}
-        style={{
-          width,
-          height,
-        }}
-        className="relative"
-      >
-        <div
-          className={cn(
-            'absolute inset-0 rounded-full',
-            'bg-gradient-to-r to-transparent',
-            gradient,
-            'border-2 border-white/80 backdrop-blur-[2px] dark:border-white/80',
-            'shadow-[0_8px_32px_0_rgba(255,255,255,0.4)] dark:shadow-[0_8px_32px_0_rgba(255,255,255,0.5)]',
-            'after:absolute after:inset-0 after:rounded-full',
-            'after:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.6),transparent_70%)]',
-            'dark:after:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.7),transparent_70%)]',
-          )}
-        />
-      </motion.div>
+        animate={{ rotate: 360 }}
+        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+        style={{ width: size, height: size }}
+        className={cn(
+          "rounded-full border-2",
+          "bg-gradient-to-r",
+          gradient,
+          "border-white/40 dark:border-white/60"
+        )}
+      />
     </motion.div>
   );
 }
 
+// Animated Hexagon
+function AnimatedHexagon({
+  className,
+  delay = 0,
+  size = 160,
+  gradient = "from-rose-400/60 to-transparent",
+}: {
+  className?: string;
+  delay?: number;
+  size?: number;
+  gradient?: string;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, rotate: -30 }}
+      animate={{ opacity: 1, rotate: 0 }}
+      transition={{ duration: 2, delay, ease: easeInOut }}
+      className={cn("absolute", className)}
+    >
+      <motion.div
+        animate={{ y: [0, 20, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        style={{
+          width: size,
+          height: size,
+          clipPath:
+            "polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)",
+        }}
+        className={cn(
+          "bg-gradient-to-tr",
+          gradient,
+          "border border-white/40 dark:border-white/60 shadow-lg"
+        )}
+      />
+    </motion.div>
+  );
+}
+
+// Animated Blob
+function AnimatedBlob({
+  className,
+  delay = 0,
+  size = 280,
+  gradient = "from-violet-400/70 to-transparent",
+}: {
+  className?: string;
+  delay?: number;
+  size?: number;
+  gradient?: string;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 2, delay, ease: easeInOut }}
+      className={cn("absolute", className)}
+    >
+      <motion.div
+        animate={{ scale: [1, 1.1, 1] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        style={{ width: size, height: size }}
+        className={cn(
+          "rounded-[60%] bg-gradient-to-br blur-xl",
+          gradient,
+          "border border-white/30 dark:border-white/50 shadow-xl"
+        )}
+      />
+    </motion.div>
+  );
+}
+
+// Animated Polygon
+function AnimatedPolygon({
+  className,
+  delay = 0,
+  size = 140,
+  gradient = "from-cyan-400/70 to-transparent",
+}: {
+  className?: string;
+  delay?: number;
+  size?: number;
+  gradient?: string;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, rotate: 45 }}
+      animate={{ opacity: 1, rotate: 0 }}
+      transition={{ duration: 2, delay, ease: easeInOut }}
+      className={cn("absolute", className)}
+    >
+      <motion.div
+        animate={{ rotate: [0, 15, -15, 0] }}
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        style={{
+          width: size,
+          height: size,
+          clipPath: "polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)",
+        }}
+        className={cn(
+          "bg-gradient-to-tr",
+          gradient,
+          "border border-white/30 dark:border-white/50 shadow-lg"
+        )}
+      />
+    </motion.div>
+  );
+}
+
+// ----------------- Hero Section -----------------
 export default function HeroGeometric({
-  badge = 'MVPBlocks',
-  title1 = 'Build Faster',
-  title2 = 'Ship Sooner',
+  badge = "Web & App Development Experts",
+  title1 = "Build Modern",
+  title2 = "Websites & Apps",
 }: {
   badge?: string;
   title1?: string;
@@ -94,65 +176,50 @@ export default function HeroGeometric({
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 1,
-        delay: 0.5 + i * 0.2,
-        ease: easeInOut,
-      },
+      transition: { duration: 1, delay: 0.5 + i * 0.2, ease: easeInOut },
     }),
   };
 
   return (
     <div className="bg-background relative flex min-h-screen w-full items-center justify-center overflow-hidden dark:bg-black">
+      {/* Gradient Glow Background */}
       <div className="from-primary/20 dark:from-primary/30 absolute inset-0 bg-gradient-to-br via-transparent to-rose-500/20 blur-3xl dark:to-rose-500/30" />
 
+      {/* Animated Shapes */}
       <div className="absolute inset-0 overflow-hidden">
-        <ElegantShape
+        <AnimatedRing
           delay={0.3}
-          width={600}
-          height={140}
-          rotate={12}
-          gradient="from-indigo-500/70"
-          className="top-[15%] left-[-10%] md:top-[20%] md:left-[-5%]"
+          size={400}
+          gradient="from-indigo-500/70 to-transparent"
+          className="top-[15%] left-[-10%]"
         />
-
-        <ElegantShape
+        <AnimatedHexagon
           delay={0.5}
-          width={500}
-          height={120}
-          rotate={-15}
-          gradient="from-rose-400"
-          className="top-[70%] right-[-5%] md:top-[75%] md:right-[0%]"
+          size={220}
+          gradient="from-rose-400/70 to-transparent"
+          className="top-[70%] right-[5%]"
         />
-
-        <ElegantShape
-          delay={0.4}
-          width={300}
-          height={80}
-          rotate={-8}
-          gradient="from-violet-400"
-          className="bottom-[5%] left-[5%] md:bottom-[10%] md:left-[10%]"
-        />
-
-        <ElegantShape
+        <AnimatedBlob
           delay={0.6}
-          width={200}
-          height={60}
-          rotate={20}
-          gradient="from-amber-500/70 dark:from-amber-400/90"
-          className="top-[10%] right-[15%] md:top-[15%] md:right-[20%]"
+          size={300}
+          gradient="from-violet-400/60 to-transparent"
+          className="bottom-[10%] left-[10%]"
         />
-
-        <ElegantShape
+        <AnimatedPolygon
           delay={0.7}
-          width={150}
-          height={40}
-          rotate={-25}
-          gradient="from-cyan-500/70 dark:from-cyan-400/90"
-          className="top-[5%] left-[20%] md:top-[10%] md:left-[25%]"
+          size={180}
+          gradient="from-amber-400/80 to-transparent"
+          className="top-[12%] right-[25%]"
+        />
+        <AnimatedPolygon
+          delay={0.9}
+          size={120}
+          gradient="from-cyan-400/70 to-transparent"
+          className="top-[5%] left-[25%]"
         />
       </div>
 
+      {/* Hero Content */}
       <div className="relative z-10 container mx-auto max-w-6xl px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <motion.div
@@ -162,7 +229,14 @@ export default function HeroGeometric({
             animate="visible"
             className="border-primary/30 bg-card/50 mb-8 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 shadow-sm backdrop-blur-sm md:mb-12"
           >
-            <Image src="/images/logo.png" width={24} height={24} alt="logo" className="h-6 w-6" />
+            <Image
+              src="/images/logo.png"
+              width={24}
+              height={24}
+              alt="logo"
+              className="h-6 w-6"
+            />
+
             <span className="text-foreground text-sm font-medium tracking-wide">
               {badge}
             </span>
@@ -181,9 +255,9 @@ export default function HeroGeometric({
               <br />
               <span
                 className={cn(
-                  'from-primary via-primary/90 bg-gradient-to-r to-rose-500 bg-clip-text p-4 text-transparent',
+                  "from-primary via-primary/90 bg-gradient-to-r to-rose-500 bg-clip-text p-4 text-transparent",
                   pacifico.className,
-                  'font-bold',
+                  "font-bold"
                 )}
               >
                 {title2}
@@ -198,8 +272,8 @@ export default function HeroGeometric({
             animate="visible"
           >
             <p className="text-muted-foreground mx-auto mb-10 max-w-xl px-4 text-base leading-relaxed sm:text-lg md:text-xl">
-              Accelerate your development with our modern, accessible, and
-              customizable UI components.
+              From idea to launch — we design and develop high-performing
+              websites and mobile applications that help businesses grow.
             </p>
           </motion.div>
 
@@ -214,7 +288,7 @@ export default function HeroGeometric({
               size="lg"
               className="from-primary shadow-primary/10 hover:from-primary/90 rounded-full border-none bg-gradient-to-r to-rose-500 shadow-md hover:to-rose-500/90"
             >
-              Get Started
+              Get a Free Quote
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <Button
@@ -222,12 +296,13 @@ export default function HeroGeometric({
               variant="outline"
               className="border-primary/30 hover:bg-primary/5 rounded-full shadow-sm"
             >
-              View Components
+              View Our Work
             </Button>
           </motion.div>
         </div>
       </div>
 
+      {/* Gradient Overlay */}
       <div className="from-background to-background/80 pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent dark:from-black dark:to-black/80" />
     </div>
   );
