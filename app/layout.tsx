@@ -18,8 +18,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "WebAppex | Web Application Development Platform",
-  description: "WebAppex is a web application development platform.",
+  title: "GretTech | Website Application Development",
+  description: "GretTech is a web application development platform.",
 };
 
 export default function RootLayout({
