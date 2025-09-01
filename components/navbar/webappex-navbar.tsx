@@ -55,7 +55,9 @@ export function WebAppexNavbar({ className }: { className?: string }) {
             <NavbarButton variant="secondary">
               <ThemeToggle />
             </NavbarButton>
-            <NavbarButton variant="primary">Contact Us</NavbarButton>
+            <NavbarButton href="/#contact" variant="primary">
+              Contact Us
+            </NavbarButton>
           </div>
         </NavBody>
 
@@ -95,6 +97,7 @@ export function WebAppexNavbar({ className }: { className?: string }) {
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
+                href="/#contact"
               >
                 Contact Us
               </NavbarButton>
