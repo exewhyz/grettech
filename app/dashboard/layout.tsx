@@ -3,9 +3,9 @@ import { SiteHeader } from "@/components/sidebar/site-header";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import React from "react";
 
-export const iframeHeight = "800px";
+// export const iframeHeight = "800px";
 
-export const description = "A sidebar with a header and a search form.";
+// export const description = "A sidebar with a header and a search form.";
 
 const DashboardLayout = ({
   children,

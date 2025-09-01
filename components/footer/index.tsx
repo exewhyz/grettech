@@ -8,6 +8,7 @@ import {
   Phone,
   Twitter,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const data = {
@@ -87,8 +88,10 @@ export default function WebAppexFooter() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_2fr]">
           <div>
             <div className="text-primary flex justify-center gap-2 sm:justify-start">
-              <img
-                src={data.company.logo || "/placeholder.svg"}
+              <Image
+                width={32}
+                height={32}
+                src={data.company.logo || "/logo.png"}
                 alt="logo"
                 className="h-8 w-8 rounded-full"
               />
