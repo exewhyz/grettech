@@ -1,6 +1,7 @@
 import { Globe, Mail, Phone } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function CTA() {
   return (
@@ -53,19 +54,13 @@ export default function CTA() {
 
             {/* CTA button */}
             <Button asChild className="mt-4">
-              <a
-                href="mailto:aniketraj.xyz@gmail.com"
-                className="h-fit text-md flex gap-2 items-center justify-center"
+              <Link
+                href="/contact"
+                className="h-fit text-md flex gap-2 items-center justify-center text-white"
               >
-                <Image
-                  className="bg-white rounded-full object-cover h-8 w-8"
-                  src="/images/logo.png"
-                  width={32}
-                  height={32}
-                  alt="Grettech Logo"
-                />
+                <Mail className="h-8 w-8 rounded-full text-white" />
                 Send a mail to us
-              </a>
+              </Link>
             </Button>
 
             <p className="text-muted-foreground text-sm text-center">
@@ -77,10 +72,10 @@ export default function CTA() {
             <div className="mt-8 flex w-full flex-col justify-between gap-4 text-base md:flex-row">
               <a
                 className="flex items-center gap-2 text-foreground hover:text-primary transition"
-                href="mailto:aniketraj.xyz@gmail.com"
+                href="mailto:support@grettech.com"
               >
                 <Mail className="h-6 w-6 text-red-500" />
-                aniketraj.xyz@gmail.com
+                support@grettech.com
               </a>
               <a
                 className="flex items-center gap-2 text-foreground hover:text-primary transition"
@@ -89,15 +84,13 @@ export default function CTA() {
                 <Phone className="h-6 w-6 text-green-500" />
                 +91-8840390107
               </a>
-              <a
+              <Link
                 className="flex items-center gap-2 text-foreground hover:text-primary transition"
-                href="https://grettech.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/"
               >
                 <Globe className="h-6 w-6 text-blue-500" />
                 grettech.com
-              </a>
+              </Link>
             </div>
           </div>
         </div>

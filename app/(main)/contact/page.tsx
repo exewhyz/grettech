@@ -1,19 +1,21 @@
-'use client';
+"use client";
 
-import { useState, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Button } from '@/components/ui/button';
-import Earth from '@/components/ui/globe';
-import { SparklesCore } from '@/components/ui/sparkles';
-import { Label } from '@/components/ui/label';
-import { Check, Loader2 } from 'lucide-react';
+import { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import Earth from "@/components/ui/globe";
+import { SparklesCore } from "@/components/ui/sparkles";
+import { Label } from "@/components/ui/label";
+import { Check, Loader2 } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
-export default function ContactUs1() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+export default function ContactPage() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -25,18 +27,33 @@ export default function ContactUs1() {
     setIsSubmitting(true);
 
     try {
-      // Perform form submission logic here
-      console.log('Form submitted:', { name, email, message });
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      setName('');
-      setEmail('');
-      setMessage('');
+      const result = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          name,
+          email,
+          mobile,
+          message,
+          year: new Date().getFullYear(),
+        },
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+        }
+      );
+      if (result.status !== 200) {
+        throw new Error(result.text);
+      }
+      setName("");
+      setEmail("");
+      setMobile("");
+      setMessage("");
       setIsSubmitted(true);
       setTimeout(() => {
         setIsSubmitted(false);
-      }, 5000);
+      }, 3000);
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error("Error submitting form:", error);
     } finally {
       setIsSubmitting(false);
     }
@@ -129,6 +146,28 @@ export default function ContactUs1() {
                     />
                   </motion.div>
                 </div>
+                <motion.div
+                  className="space-y-2"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  <Label htmlFor="mobile">Mobile</Label>
+                  <Input
+                    id="mobile"
+                    type="number"
+                    min={0}
+                    max={9999999999}
+                    maxLength={10}
+                    minLength={10}
+                    value={mobile}
+                    onChange={(e) => setMobile(e.target.value)}
+                    placeholder="Enter your mobile number"
+                    required
+                    pattern="[0-9]{10}"
+                    className="appearance-none"
+                  />
+                </motion.div>
 
                 <motion.div
                   className="space-y-2"
@@ -165,10 +204,10 @@ export default function ContactUs1() {
                     ) : isSubmitted ? (
                       <span className="flex items-center justify-center">
                         <Check className="mr-2 h-4 w-4" />
-                        Message Sent!
+                        Email Sent!
                       </span>
                     ) : (
-                      <span>Send Message</span>
+                      <span>Send Email</span>
                     )}
                   </Button>
                 </motion.div>
@@ -179,11 +218,11 @@ export default function ContactUs1() {
               initial={{ opacity: 0, x: 20 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="relative my-8 flex items-center justify-center overflow-hidden pr-8"
+              className="relative my-8 flex items-center justify-center overflow-hidden px-4 md:pr-8 md:pl-0"
             >
               <div className="flex flex-col items-center justify-center overflow-hidden">
                 <article className="relative mx-auto h-[350px] min-h-60 max-w-[450px] overflow-hidden rounded-3xl border bg-gradient-to-b from-[#e60a64] to-[#e60a64]/5 p-6 text-3xl tracking-tight text-white md:h-[450px] md:min-h-80 md:p-8 md:text-4xl md:leading-[1.05] lg:text-5xl">
-                  Presenting you with the best UI possible.
+                  Smart, scalable, and stunning digital solutions.
                   <div className="absolute -right-20 -bottom-20 z-10 mx-auto flex h-full w-full max-w-[300px] items-center justify-center transition-all duration-700 hover:scale-105 md:-right-28 md:-bottom-28 md:max-w-[550px]">
                     <Earth
                       scale={1.1}

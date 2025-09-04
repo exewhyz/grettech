@@ -13,6 +13,7 @@ import {
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { ThemeToggle } from "../theme-toggle";
+import Link from "next/link";
 
 export function WebAppexNavbar({ className }: { className?: string }) {
   const navItems = [
@@ -55,7 +56,7 @@ export function WebAppexNavbar({ className }: { className?: string }) {
             <NavbarButton variant="secondary">
               <ThemeToggle />
             </NavbarButton>
-            <NavbarButton href="/#contact" variant="primary">
+            <NavbarButton as={Link} href="/contact" variant="primary">
               Contact Us
             </NavbarButton>
           </div>
@@ -76,14 +77,14 @@ export function WebAppexNavbar({ className }: { className?: string }) {
             onClose={() => setIsMobileMenuOpen(false)}
           >
             {navItems.map((item, idx) => (
-              <a
+              <Link
                 key={`mobile-link-${idx}`}
                 href={item.link}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="relative text-neutral-600 dark:text-neutral-300"
               >
                 <span className="block">{item.name}</span>
-              </a>
+              </Link>
             ))}
             <div className="flex w-full flex-col gap-4">
               <NavbarButton
@@ -97,7 +98,8 @@ export function WebAppexNavbar({ className }: { className?: string }) {
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
-                href="/#contact"
+                href="/contact"
+                as={Link}
               >
                 Contact Us
               </NavbarButton>
