@@ -10,7 +10,7 @@ const RootLayout = ({
   return (
     <>
       <WebAppexNavbar />
-      <main className="flex min-h-screen flex-col">{children}</main>
+      <main className="flex flex-col min-h-screen">{children}</main>
       <WebAppexFooter />
     </>
   );

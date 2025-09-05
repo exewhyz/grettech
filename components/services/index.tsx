@@ -5,38 +5,38 @@ import {
   Paintbrush,
   Rocket,
   Headphones,
-} from 'lucide-react';
+} from "lucide-react";
 
 const features = [
   {
     icon: <Globe className="h-6 w-6" />,
-    title: 'Web Development',
-    desc: 'Responsive, scalable, and high-performing websites built with the latest technologies.',
+    title: "Web Development",
+    desc: "Responsive, scalable, and high-performing websites built with the latest technologies.",
   },
   {
     icon: <Smartphone className="h-6 w-6" />,
-    title: 'App Development',
-    desc: 'iOS & Android apps tailored to your business needs with seamless user experiences.',
+    title: "App Development",
+    desc: "iOS & Android apps tailored to your business needs with seamless user experiences.",
   },
   {
     icon: <Paintbrush className="h-6 w-6" />,
-    title: 'UI/UX Design',
-    desc: 'Clean, modern, and user-friendly designs that keep your customers engaged.',
+    title: "UI/UX Design",
+    desc: "Clean, modern, and user-friendly designs that keep your customers engaged.",
   },
   {
     icon: <Rocket className="h-6 w-6" />,
-    title: 'MVP Development',
-    desc: 'Get your idea to market quickly with lean, scalable MVP solutions.',
+    title: "MVP Development",
+    desc: "Get your idea to market quickly with lean, scalable MVP solutions.",
   },
   {
     icon: <Code className="h-6 w-6" />,
-    title: 'Custom Solutions',
-    desc: 'From APIs to dashboards, we build custom digital solutions to streamline your workflow.',
+    title: "Custom Solutions",
+    desc: "From APIs to dashboards, we build custom digital solutions to streamline your workflow.",
   },
   {
     icon: <Headphones className="h-6 w-6" />,
-    title: 'Ongoing Support',
-    desc: 'Dedicated support and maintenance to ensure your website or app keeps running smoothly.',
+    title: "Ongoing Support",
+    desc: "Dedicated support and maintenance to ensure your website or app keeps running smoothly.",
   },
 ];
 
@@ -46,18 +46,20 @@ export default function Services() {
       <div className="mx-auto max-w-screen-xl px-4 md:px-8">
         <div className="relative mx-auto max-w-2xl sm:text-center">
           <div className="relative z-10">
-            <h3 className="font-geist mt-4 text-3xl font-normal tracking-tighter sm:text-4xl md:text-5xl">
+
+            <h1 className="from-foreground to-foreground/40 mb-4 bg-gradient-to-b bg-clip-text text-3xl font-bold text-transparent md:text-5xl lg:text-6xl">
               Our Services
-            </h3>
-            <p className="font-geist text-foreground/60 mt-3">
-              We design and develop high-performing websites and apps to help your business grow and succeed online.
+            </h1>
+            <p className="text-muted-foreground mx-auto max-w-2xl text-base md:text-lg">
+              We design and develop high-performing websites and apps to help
+              your business grow and succeed online.
             </p>
           </div>
           <div
             className="absolute inset-0 mx-auto h-44 max-w-xs blur-[118px]"
             style={{
               background:
-                'linear-gradient(152.92deg, rgba(192, 15, 102, 0.2) 4.54%, rgba(192, 11, 109, 0.26) 34.2%, rgba(192, 15, 102, 0.1) 77.55%)',
+                "linear-gradient(152.92deg, rgba(192, 15, 102, 0.2) 4.54%, rgba(192, 11, 109, 0.26) 34.2%, rgba(192, 15, 102, 0.1) 77.55%)",
             }}
           ></div>
         </div>

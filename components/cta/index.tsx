@@ -70,20 +70,20 @@ export default function CTA() {
 
             {/* Contact links */}
             <div className="mt-8 flex w-full flex-col justify-between gap-4 text-base md:flex-row">
-              <a
+              <Link
                 className="flex items-center gap-2 text-foreground hover:text-primary transition"
                 href="mailto:support@grettech.com"
               >
                 <Mail className="h-6 w-6 text-red-500" />
-                support@grettech.com
-              </a>
-              <a
+                contact@grettech.com
+              </Link>
+              <Link
                 className="flex items-center gap-2 text-foreground hover:text-primary transition"
                 href="tel:+91-8840390107"
               >
                 <Phone className="h-6 w-6 text-green-500" />
                 +91-8840390107
-              </a>
+              </Link>
               <Link
                 className="flex items-center gap-2 text-foreground hover:text-primary transition"
                 href="/"

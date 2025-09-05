@@ -67,10 +67,10 @@ export default function ProcessSteps() {
       <div className="mx-auto w-full max-w-7xl">
         <div className="relative mx-auto mb-12 max-w-2xl sm:text-center">
           <div className="relative z-10">
-            <h2 className="font-geist text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
+            <h1 className="from-foreground to-foreground/40 mb-4 bg-gradient-to-b bg-clip-text text-3xl font-bold text-transparent md:text-5xl lg:text-6xl">
               Our 4-Step Process
-            </h2>
-            <p className="font-geist text-foreground/60 mt-3">
+            </h1>
+            <p className="text-muted-foreground mx-auto max-w-2xl text-base md:text-lg">
               From strategy to launch, Grettech handles design, development, and
               growth—end to end.
             </p>

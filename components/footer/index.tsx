@@ -1,5 +1,4 @@
 import {
-  Dribbble,
   Facebook,
   Github,
   Instagram,
@@ -12,11 +11,10 @@ import {
 import Link from "next/link";
 
 const data = {
-  facebookLink: "https://www.facebook.com/",
-  instaLink: "https://www.instagram.com/",
-  twitterLink: "https://twitter.com/",
-  dribbbleLink: "https://dribbble.com/",
-  githubLink: "https://github.com/",
+  facebookLink: "https://www.facebook.com/profile.php?id=61580306403766",
+  instaLink: "https://www.instagram.com/grettech_official/",
+  twitterLink: "https://x.com/grettech20118",
+  githubLink: "https://github.com/exewhyz/",
   services: {
     webdev: "/web-development",
     webdesign: "/web-design",
@@ -51,8 +49,7 @@ const socialLinks = [
   { icon: Facebook, label: "Facebook", href: data.facebookLink },
   { icon: Instagram, label: "Instagram", href: data.instaLink },
   { icon: Twitter, label: "Twitter", href: data.twitterLink },
-  { icon: Github, label: "GitHub", href: data.githubLink },
-  { icon: Dribbble, label: "Dribbble", href: data.dribbbleLink },
+  { icon: Github, label: "GitHub", href: data.githubLink }
 ];
 
 const aboutLinks = [

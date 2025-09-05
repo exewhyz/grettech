@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { HTMLMotionProps, motion, useInView } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,7 @@ import { SparklesCore } from "@/components/ui/sparkles";
 import { Label } from "@/components/ui/label";
 import { Check, Loader2 } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import { cn } from "@/lib/utils";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
@@ -113,12 +114,7 @@ export default function ContactPage() {
                 className="mt-8 space-y-6"
               >
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <motion.div
-                    className="space-y-2"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
-                  >
+                  <Group transition={{ delay: 0.4 }}>
                     <Label htmlFor="name">Name</Label>
                     <Input
                       id="name"
@@ -127,14 +123,9 @@ export default function ContactPage() {
                       placeholder="Enter your name"
                       required
                     />
-                  </motion.div>
+                  </Group>
 
-                  <motion.div
-                    className="space-y-2"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
-                  >
+                  <Group transition={{ delay: 0.5 }}>
                     <Label htmlFor="email">Email</Label>
                     <Input
                       id="email"
@@ -144,14 +135,9 @@ export default function ContactPage() {
                       placeholder="Enter your email"
                       required
                     />
-                  </motion.div>
+                  </Group>
                 </div>
-                <motion.div
-                  className="space-y-2"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
-                >
+                <Group transition={{ delay: 0.6 }}>
                   <Label htmlFor="mobile">Mobile</Label>
                   <Input
                     id="mobile"
@@ -167,14 +153,9 @@ export default function ContactPage() {
                     pattern="[0-9]{10}"
                     className="appearance-none"
                   />
-                </motion.div>
+                </Group>
 
-                <motion.div
-                  className="space-y-2"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 }}
-                >
+                <Group transition={{ delay: 0.7 }}>
                   <Label htmlFor="message">Message</Label>
                   <Textarea
                     id="message"
@@ -184,7 +165,7 @@ export default function ContactPage() {
                     required
                     className="h-40 resize-none"
                   />
-                </motion.div>
+                </Group>
 
                 <motion.div
                   whileHover={{ scale: 1.02 }}
@@ -240,3 +221,16 @@ export default function ContactPage() {
     </section>
   );
 }
+type MotionGroupProps = HTMLMotionProps<"div">;
+const Group = ({ children, className, ...props }: MotionGroupProps) => {
+  return (
+    <motion.div
+      className={cn("space-y-2", className)}
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      {...props}
+    >
+      {children}
+    </motion.div>
+  );
+};

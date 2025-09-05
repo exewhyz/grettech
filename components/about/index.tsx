@@ -100,10 +100,13 @@ export default function AboutUs() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mx-auto mb-16 max-w-2xl text-center"
         >
-          <h1 className="from-foreground/80 via-foreground to-foreground/80 bg-gradient-to-r bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl md:text-6xl">
+          {/* <h1 className="from-foreground/80 via-foreground to-foreground/80 bg-gradient-to-r bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl md:text-6xl">
+            {aboutData.title}
+          </h1> */}
+          <h1 className="from-foreground to-foreground/40 mb-4 bg-gradient-to-b bg-clip-text text-3xl font-bold text-transparent md:text-5xl lg:text-6xl">
             {aboutData.title}
           </h1>
-          <p className="text-muted-foreground mt-6 text-xl">
+          <p className="text-muted-foreground mx-auto max-w-2xl text-base md:text-lg">
             {aboutData.subtitle}
           </p>
         </motion.div>
@@ -177,10 +180,10 @@ export default function AboutUs() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="mb-12 text-center"
           >
-            <h2 className="from-foreground/80 via-foreground to-foreground/80 bg-gradient-to-r bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
+            <h2 className="from-foreground to-foreground/40 mb-4 bg-gradient-to-b bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
               Our Core Values
             </h2>
-            <p className="text-muted-foreground mx-auto mt-4 max-w-2xl text-lg">
+            <p className="text-muted-foreground mx-auto text-base mt-4 max-w-2xl">
               The principles that guide everything we do and every decision we
               make.
             </p>
