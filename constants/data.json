@@ -14,12 +14,33 @@
     "phone": "+91 8840390107",
     "address": "14th Cross Rd., Vinayaka Layout, KR Puram, Bangalore - 560049"
   },
-  "social": {
-    "facebook": "https://www.facebook.com/profile.php?id=61580306403766",
-    "instagram": "https://www.instagram.com/grettech_official/",
-    "twitter": "https://x.com/grettech20118",
-    "github": "https://github.com/exewhyz/"
-  },
+  "social": [
+    {
+      "icon": "linkedin",
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/company/grettech/"
+    },
+    {
+      "icon": "facebook",
+      "label": "Facebook",
+      "href": "https://www.facebook.com/profile.php?id=61580306403766"
+    },
+    {
+      "icon": "instagram",
+      "label": "Instagram",
+      "href": "https://www.instagram.com/grettech_official/"
+    },
+    {
+      "icon": "twitter",
+      "label": "Twitter",
+      "href": "https://x.com/grettech20118"
+    },
+    {
+      "icon": "github",
+      "label": "GitHub",
+      "href": "https://github.com/exewhyz/"
+    }
+  ],
   "navigation": {
     "main": [
       {

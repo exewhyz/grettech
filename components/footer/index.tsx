@@ -2,6 +2,7 @@ import {
   Facebook,
   Github,
   Instagram,
+  Linkedin,
   Mail,
   MapPin,
   Phone,
@@ -12,12 +13,20 @@ import siteData from "@/constants/data.json";
 
 const companyFirstName = siteData.company.firstName;
 const companyLastName = siteData.company.lastName;
-const socialLinks = [
-  { icon: Facebook, label: "Facebook", href: siteData.social.facebook },
-  { icon: Instagram, label: "Instagram", href: siteData.social.instagram },
-  { icon: Twitter, label: "Twitter", href: siteData.social.twitter },
-  { icon: Github, label: "GitHub", href: siteData.social.github }
-];
+
+const iconMap = {
+  facebook: Facebook,
+  github: Github,
+  instagram: Instagram,
+  twitter: Twitter,
+  linkedin: Linkedin,
+};
+
+const socialLinks = siteData.social.map((link) => ({
+  icon: iconMap[link.icon as keyof typeof iconMap],
+  label: link.label,
+  href: link.href,
+}));
 
 const aboutLinks = siteData.footer.links.about;
 const serviceLinks = siteData.footer.links.services;
