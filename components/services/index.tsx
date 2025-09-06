@@ -42,9 +42,9 @@ const features = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-14">
+    <section id="services" className="relative pt-24 pb-14">
       <div className="mx-auto max-w-screen-xl px-4 md:px-8">
-        <div className="relative mx-auto max-w-2xl sm:text-center">
+        <div className="relative mx-auto max-w-2xl text-center">
           <div className="relative z-10">
 
             <h1 className="from-foreground to-foreground/40 mb-4 bg-gradient-to-b bg-clip-text text-3xl font-bold text-transparent md:text-5xl lg:text-6xl">

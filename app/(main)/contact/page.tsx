@@ -141,16 +141,15 @@ export default function ContactPage() {
                   <Label htmlFor="mobile">Mobile</Label>
                   <Input
                     id="mobile"
-                    type="number"
+                    type="tel"
                     min={0}
                     max={9999999999}
-                    maxLength={10}
                     minLength={10}
+                    maxLength={10}
                     value={mobile}
                     onChange={(e) => setMobile(e.target.value)}
                     placeholder="Enter your mobile number"
                     required
-                    pattern="[0-9]{10}"
                     className="appearance-none"
                   />
                 </Group>

@@ -63,9 +63,9 @@ export default function ProcessSteps() {
   }, [progress]);
 
   return (
-    <section id="process" className={"p-8 md:p-12"}>
+    <section id="process" className={"px-8 md:px-12 pt-24"}>
       <div className="mx-auto w-full max-w-7xl">
-        <div className="relative mx-auto mb-12 max-w-2xl sm:text-center">
+        <div className="relative mx-auto mb-12 max-w-2xl text-center">
           <div className="relative z-10">
             <h1 className="from-foreground to-foreground/40 mb-4 bg-gradient-to-b bg-clip-text text-3xl font-bold text-transparent md:text-5xl lg:text-6xl">
               Our 4-Step Process

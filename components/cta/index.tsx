@@ -5,9 +5,9 @@ import Link from "next/link";
 
 export default function CTA() {
   return (
-    <section id="contact" className="w-full">
+    <section id="cta" className="w-full">
       <div className="mx-auto max-w-4xl px-4 py-6 lg:px-8 lg:py-20">
-        <div
+        <div 
           className="relative isolate w-full overflow-hidden rounded-2xl border border-border shadow-md 
           bg-gray-50 dark:bg-transparent"
           style={{

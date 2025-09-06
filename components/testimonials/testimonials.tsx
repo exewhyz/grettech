@@ -98,7 +98,7 @@ export default function TestimonialsCarousel({
     <section
       aria-label="Testimonials"
       id="testimonials"
-      className={cn("relative overflow-hidden py-16 md:py-24", className)}
+      className={cn("relative overflow-hidden py-24", className)}
     >
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.2),transparent_60%)]" />

@@ -118,6 +118,9 @@ export default function WebAppexFooter() {
                   <li key={label}>
                     <Link
                       href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
                       className="text-gray-600 hover:text-primary dark:text-muted-foreground dark:hover:text-primary transition"
                     >
                       <span className="sr-only">{label}</span>
