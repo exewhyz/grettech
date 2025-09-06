@@ -251,7 +251,7 @@ export default function HeroGeometric({
             animate="visible"
           >
             <h1 className="mx-4 mb-6 text-4xl font-bold tracking-tight sm:text-6xl md:mb-8 md:text-8xl">
-              <span className="from-foreground to-foreground/80 bg-gradient-to-b bg-clip-text text-transparent">
+              <span className="from-foreground to-foreground/40 mb-4 bg-gradient-to-b bg-clip-text text-transparent">
                 {title1}
               </span>
               <br />
