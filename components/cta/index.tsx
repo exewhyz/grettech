@@ -2,12 +2,13 @@ import { Globe, Mail, Phone } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import siteData from "@/constants/data.json";
 
 export default function CTA() {
   return (
     <section id="cta" className="w-full">
       <div className="mx-auto max-w-4xl px-4 py-6 lg:px-8 lg:py-20">
-        <div 
+        <div
           className="relative isolate w-full overflow-hidden rounded-2xl border border-border shadow-md 
           bg-gray-50 dark:bg-transparent"
           style={{
@@ -55,7 +56,7 @@ export default function CTA() {
             {/* CTA button */}
             <Button asChild className="mt-4">
               <Link
-                href="/contact"
+                href={siteData.navigation.pages.contact.link}
                 className="h-fit text-md flex gap-2 items-center justify-center text-white"
               >
                 <Mail className="h-8 w-8 rounded-full text-white" />
@@ -72,24 +73,24 @@ export default function CTA() {
             <div className="mt-8 flex w-full flex-col justify-between gap-4 text-base md:flex-row">
               <Link
                 className="flex items-center gap-2 text-foreground hover:text-primary transition"
-                href="mailto:support@grettech.com"
+                href={`mailto:${siteData.contact.email}`}
               >
                 <Mail className="h-6 w-6 text-red-500" />
-                contact@grettech.com
+                {siteData.contact.email}
               </Link>
               <Link
                 className="flex items-center gap-2 text-foreground hover:text-primary transition"
-                href="tel:+91-8840390107"
+                href={`tel:${siteData.contact.phone}`}
               >
                 <Phone className="h-6 w-6 text-green-500" />
-                +91-8840390107
+                {siteData.contact.phone}
               </Link>
               <Link
                 className="flex items-center gap-2 text-foreground hover:text-primary transition"
-                href="/"
+                href={siteData.navigation.pages.home.link}
               >
                 <Globe className="h-6 w-6 text-blue-500" />
-                grettech.com
+                {siteData.company.domain}
               </Link>
             </div>
           </div>

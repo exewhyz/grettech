@@ -1,0 +1,241 @@
+{
+  "company": {
+    "name": "GretTech",
+    "firstName": "Gret",
+    "lastName": "Tech",
+    "domain": "grettech.com",
+    "tagline": "Your Digital Partner",
+    "slogan": "Empowering Businesses with Digital Solutions",
+    "description": "We craft modern, scalable, and visually stunning web solutions to help businesses grow digitally.",
+    "logo": "/images/logo.png"
+  },
+  "contact": {
+    "email": "contact@grettech.com",
+    "phone": "+91 8840390107",
+    "address": "14th Cross Rd., Vinayaka Layout, KR Puram, Bangalore - 560049"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/profile.php?id=61580306403766",
+    "instagram": "https://www.instagram.com/grettech_official/",
+    "twitter": "https://x.com/grettech20118",
+    "github": "https://github.com/exewhyz/"
+  },
+  "navigation": {
+    "main": [
+      {
+        "name": "Works",
+        "link": "/works"
+      },
+      {
+        "name": "Services",
+        "link": "/#services"
+      },
+      {
+        "name": "About",
+        "link": "/#about"
+      },
+      {
+        "name": "Process",
+        "link": "/#process"
+      },
+      {
+        "name": "Testimonials",
+        "link": "/#testimonials"
+      }
+    ],
+    "pages": {
+      "home": { "title": "Home", "link": "/" },
+      "contact": { "title": "Contact Us", "link": "/contact" },
+      "works": { "title": "Works", "link": "/works" }
+    }
+  },
+  "hero": {
+    "badge": "Web & App Development Experts",
+    "title": {
+      "line1": "Build Modern",
+      "line2": "Websites & Apps"
+    },
+    "description": "From idea to launch — we design and develop high-performing websites and mobile applications that help businesses grow.",
+    "ctaButtons": [
+      {
+        "text": "Contact Us",
+        "link": "/contact"
+      },
+      {
+        "text": "View Our Work",
+        "link": "/works"
+      }
+    ]
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "We design and develop high-performing websites and apps to help your business grow and succeed online.",
+    "items": [
+      {
+        "title": "Web Development",
+        "description": "Responsive, scalable, and high-performing websites built with the latest technologies.",
+        "icon": "Globe",
+        "link": "/web-development"
+      },
+      {
+        "title": "App Development",
+        "description": "iOS & Android apps tailored to your business needs with seamless user experiences.",
+        "icon": "Smartphone",
+        "link": "/app-development"
+      },
+      {
+        "title": "UI/UX Design",
+        "description": "Clean, modern, and user-friendly designs that keep your customers engaged.",
+        "icon": "Paintbrush",
+        "link": "/web-design"
+      },
+      {
+        "title": "MVP Development",
+        "description": "Get your idea to market quickly with lean, scalable MVP solutions.",
+        "icon": "Rocket",
+        "link": "/mvp-development"
+      },
+      {
+        "title": "Custom Solutions",
+        "description": "From APIs to dashboards, we build custom digital solutions to streamline your workflow.",
+        "icon": "Code",
+        "link": "/custom-solutions"
+      },
+      {
+        "title": "Ongoing Support",
+        "description": "Dedicated support and maintenance to ensure your website or app keeps running smoothly.",
+        "icon": "Headphones",
+        "link": "/support"
+      }
+    ]
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "We craft modern websites and mobile apps that help businesses thrive in the digital age.",
+    "mission": "Our mission is to empower businesses by building scalable, user-friendly, and impactful digital solutions that drive growth and success.",
+    "vision": "We envision a world where every business—big or small—can leverage technology to achieve its full potential online.",
+    "values": {
+      "title": "Our Core Values",
+      "subtitle": "The principles that guide everything we do and every decision we make.",
+      "items": [
+        {
+          "title": "Innovation",
+          "description": "We embrace new technologies and creative approaches to deliver modern, future-ready solutions.",
+          "icon": "Lightbulb",
+          "color": "purple",
+          "longDescription": "Innovation is at our core. We constantly explore emerging technologies and methodologies to ensure our clients stay ahead of the curve. From AI-powered solutions to cutting-edge development frameworks, we're committed to pushing boundaries."
+        },
+        {
+          "title": "Collaboration",
+          "description": "We work closely with our clients as partners, turning their vision into reality to help them achieve their goals.",
+          "icon": "Users",
+          "color": "blue",
+          "longDescription": "True success comes from partnership. We believe in transparent communication, active listening, and working hand-in-hand with our clients throughout the development process. Your goals become our goals."
+        },
+        {
+          "title": "Quality",
+          "description": "We are committed to delivering websites and apps that are reliable, scalable, and pixel-perfect.",
+          "icon": "Sparkles",
+          "color": "amber",
+          "longDescription": "Quality is non-negotiable. Our rigorous development process, thorough testing protocols, and attention to detail ensure that every project meets the highest standards of performance, security, and user experience."
+        },
+        {
+          "title": "Impact",
+          "description": "Our focus is on creating digital products that make a measurable difference for businesses and their customers.",
+          "icon": "Globe",
+          "color": "rose",
+          "longDescription": "We measure our success by the impact we create. Every feature, every optimization, and every design choice is made with the goal of driving real business results and delivering exceptional value to end users."
+        }
+      ]
+    }
+  },
+  "process": {
+    "title": "Our 4-Step Process",
+    "subtitle": "From strategy to launch, Grettech handles design, development, and growth—end to end.",
+    "steps": [
+      {
+        "step": "Step 1",
+        "title": "Discover & Plan",
+        "content": "We start by understanding your business goals, audience, and requirements to craft a clear roadmap for your project.",
+        "icon": "Rocket",
+        "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "step": "Step 2",
+        "title": "Design & Develop",
+        "content": "Our team designs engaging interfaces and develops scalable, high-performance websites and apps tailored to your brand.",
+        "icon": "Paintbrush",
+        "image": "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "step": "Step 3",
+        "title": "Test & Launch",
+        "content": "We rigorously test for quality, performance, and security before deploying your solution with confidence.",
+        "icon": "Code",
+        "image": "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "step": "Step 4",
+        "title": "Support & Grow",
+        "content": "After launch, we provide continuous support, updates, and enhancements to help your business scale.",
+        "icon": "Code",
+        "image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2070&auto=format&fit=crop"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What our users say",
+    "subtitle": "From intuitive design to powerful features, our components have become essential tools for developers around the world.",
+    "items": [
+      {
+        "text": "Working with your team was seamless. Our website went from idea to launch in record time without compromising on quality.",
+        "name": "Arjun Mehta",
+        "username": "@arjdev",
+        "role": "Startup Founder",
+        "imageSrc": ""
+      },
+      {
+        "text": "The mobile app they delivered exceeded our expectations — fast, modern UI and bug-free. Clients loved it from day one.",
+        "name": "Sara Lin",
+        "username": "@sara.codes",
+        "role": "Product Manager",
+        "imageSrc": ""
+      },
+      {
+        "text": "Our e-commerce platform was built and deployed quickly, helping us boost sales. Their technical expertise is unmatched.",
+        "name": "Devon Carter",
+        "username": "@devninja",
+        "role": "Business Owner",
+        "imageSrc": ""
+      },
+      {
+        "text": "We needed a custom dashboard for our team. They built it with precision and scalability in mind. Huge time-saver!",
+        "name": "Priya Shah",
+        "username": "@priyacodes",
+        "role": "Operations Head",
+        "imageSrc": ""
+      }
+    ]
+  },
+  "footer": {
+    "links": {
+      "about": [
+        { "text": "Company History", "href": "/company-history" },
+        { "text": "Meet the Team", "href": "/meet-the-team" },
+        { "text": "Employee Handbook", "href": "/employee-handbook" },
+        { "text": "Careers", "href": "/careers" }
+      ],
+      "services": [
+        { "text": "Web Development", "href": "/web-development" },
+        { "text": "Web Design", "href": "/web-design" },
+        { "text": "App Development", "href": "/app-development" },
+        { "text": "Google Ads", "href": "/google-ads" }
+      ],
+      "help": [
+        { "text": "FAQs", "href": "/faqs" },
+        { "text": "Support", "href": "/support" },
+        { "text": "Live Chat", "href": "/live-chat" }
+      ]
+    }
+  }
+}

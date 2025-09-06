@@ -7,76 +7,33 @@ import {
   Phone,
   Twitter,
 } from "lucide-react";
-// import Image from "next/image";
 import Link from "next/link";
+import siteData from "@/constants/data.json";
 
-const data = {
-  facebookLink: "https://www.facebook.com/profile.php?id=61580306403766",
-  instaLink: "https://www.instagram.com/grettech_official/",
-  twitterLink: "https://x.com/grettech20118",
-  githubLink: "https://github.com/exewhyz/",
-  services: {
-    webdev: "/web-development",
-    webdesign: "/web-design",
-    appdev: "/app-development",
-    googleads: "/google-ads",
-  },
-  about: {
-    history: "/company-history",
-    team: "/meet-the-team",
-    handbook: "/employee-handbook",
-    careers: "/careers",
-  },
-  help: {
-    faqs: "/faqs",
-    support: "/support",
-    livechat: "/live-chat",
-  },
-  contact: {
-    email: "contact@grettech.com",
-    phone: "+91 8840390107",
-    address: "14th Cross Rd., Vinayaka Layout, KR Puram, Bangalore - 560049",
-  },
-  company: {
-    name: "GretTech",
-    description:
-      "We craft modern, scalable, and visually stunning web solutions to help businesses grow digitally.",
-    logo: "/logo.png",
-  },
-};
-
+const companyFirstName = siteData.company.firstName;
+const companyLastName = siteData.company.lastName;
 const socialLinks = [
-  { icon: Facebook, label: "Facebook", href: data.facebookLink },
-  { icon: Instagram, label: "Instagram", href: data.instaLink },
-  { icon: Twitter, label: "Twitter", href: data.twitterLink },
-  { icon: Github, label: "GitHub", href: data.githubLink }
+  { icon: Facebook, label: "Facebook", href: siteData.social.facebook },
+  { icon: Instagram, label: "Instagram", href: siteData.social.instagram },
+  { icon: Twitter, label: "Twitter", href: siteData.social.twitter },
+  { icon: Github, label: "GitHub", href: siteData.social.github }
 ];
 
-const aboutLinks = [
-  { text: "Company History", href: data.about.history },
-  { text: "Meet the Team", href: data.about.team },
-  { text: "Employee Handbook", href: data.about.handbook },
-  { text: "Careers", href: data.about.careers },
-];
-
-const serviceLinks = [
-  { text: "Web Development", href: data.services.webdev },
-  { text: "Web Design", href: data.services.webdesign },
-  { text: "App Development", href: data.services.appdev },
-  { text: "Google Ads", href: data.services.googleads },
-];
+const aboutLinks = siteData.footer.links.about;
+const serviceLinks = siteData.footer.links.services;
+// const helpLinks = siteData.footer.links.help;
 
 const contactInfo = [
-  { icon: Mail, text: data.contact.email, type: "email" },
-  { icon: Phone, text: data.contact.phone, type: "phone" },
+  { icon: Mail, text: siteData.contact.email, type: "email" },
+  { icon: Phone, text: siteData.contact.phone, type: "phone" },
   {
     icon: MapPin,
-    text: data.contact.address,
+    text: siteData.contact.address,
     type: "address",
   },
 ];
 
-export default function WebAppexFooter() {
+export default function Footer() {
   return (
     <>
       {/* Gradient divider */}
@@ -102,15 +59,15 @@ export default function WebAppexFooter() {
                   href="/"
                   className="font-medium text-2xl text-black dark:text-white "
                 >
-                  Gret
+                  {companyFirstName}
                   <span className="text-primary text-3xl font-playfair">
-                    Tech
+                    {companyLastName}
                   </span>
                 </Link>
               </div>
 
               <p className="mt-6 max-w-md text-center leading-relaxed sm:text-left text-gray-600 dark:text-muted-foreground">
-                {data.company.description}
+                {siteData.company.description}
               </p>
 
               <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
@@ -201,7 +158,7 @@ export default function WebAppexFooter() {
                 <span className="block sm:inline">All rights reserved.</span>
               </p>
               <p className="mt-4 text-sm text-gray-500 dark:text-muted-foreground sm:order-first sm:mt-0">
-                &copy; {new Date().getFullYear()} {data.company.name}
+                &copy; {new Date().getFullYear()} {siteData.company.name}
               </p>
             </div>
           </div>

@@ -6,39 +6,22 @@ import {
   Rocket,
   Headphones,
 } from "lucide-react";
+import data from "@/constants/data.json";
 
-const features = [
-  {
-    icon: <Globe className="h-6 w-6" />,
-    title: "Web Development",
-    desc: "Responsive, scalable, and high-performing websites built with the latest technologies.",
-  },
-  {
-    icon: <Smartphone className="h-6 w-6" />,
-    title: "App Development",
-    desc: "iOS & Android apps tailored to your business needs with seamless user experiences.",
-  },
-  {
-    icon: <Paintbrush className="h-6 w-6" />,
-    title: "UI/UX Design",
-    desc: "Clean, modern, and user-friendly designs that keep your customers engaged.",
-  },
-  {
-    icon: <Rocket className="h-6 w-6" />,
-    title: "MVP Development",
-    desc: "Get your idea to market quickly with lean, scalable MVP solutions.",
-  },
-  {
-    icon: <Code className="h-6 w-6" />,
-    title: "Custom Solutions",
-    desc: "From APIs to dashboards, we build custom digital solutions to streamline your workflow.",
-  },
-  {
-    icon: <Headphones className="h-6 w-6" />,
-    title: "Ongoing Support",
-    desc: "Dedicated support and maintenance to ensure your website or app keeps running smoothly.",
-  },
-];
+const iconMap = {
+  Globe: <Globe className="h-6 w-6" />,
+  Smartphone: <Smartphone className="h-6 w-6" />,
+  Paintbrush: <Paintbrush className="h-6 w-6" />,
+  Rocket: <Rocket className="h-6 w-6" />,
+  Code: <Code className="h-6 w-6" />,
+  Headphones: <Headphones className="h-6 w-6" />,
+};
+
+const features = data.services.items.map(item => ({
+  icon: iconMap[item.icon as keyof typeof iconMap],
+  title: item.title,
+  desc: item.description,
+}));
 
 export default function Services() {
   return (
@@ -48,11 +31,10 @@ export default function Services() {
           <div className="relative z-10">
 
             <h1 className="from-foreground to-foreground/40 mb-4 bg-gradient-to-b bg-clip-text text-3xl font-bold text-transparent md:text-5xl lg:text-6xl">
-              Our Services
+              {data.services.title}
             </h1>
             <p className="text-muted-foreground mx-auto max-w-2xl text-base md:text-lg">
-              We design and develop high-performing websites and apps to help
-              your business grow and succeed online.
+              {data.services.subtitle}
             </p>
           </div>
           <div

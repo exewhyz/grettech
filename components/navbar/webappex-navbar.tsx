@@ -15,25 +15,10 @@ import { useState } from "react";
 import { ThemeToggle } from "../theme-toggle";
 import Link from "next/link";
 
+import data from "@/constants/data.json";
+
 export function WebAppexNavbar({ className }: { className?: string }) {
-  const navItems = [
-    {
-      name: "Services",
-      link: "/#services",
-    },
-    {
-      name: "About",
-      link: "/#about",
-    },
-    {
-      name: "Process",
-      link: "/#process",
-    },
-    {
-      name: "Testimonials",
-      link: "/#testimonials",
-    },
-  ];
+  const navItems = data.navigation.main;
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -50,14 +35,22 @@ export function WebAppexNavbar({ className }: { className?: string }) {
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody>
-          <NavbarLogo />
+          <NavbarLogo
+            companyFirstName={data.company.firstName}
+            companyLastName={data.company.lastName}
+            homeLink={data.navigation.pages.home.link}
+          />
           <NavItems items={navItems} />
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
             <NavbarButton variant="secondary">
               <ThemeToggle />
             </NavbarButton>
-            <NavbarButton as={Link} href="/contact" variant="primary">
-              Contact Us
+            <NavbarButton
+              as={Link}
+              href={data.navigation.pages.contact.link}
+              variant="primary"
+            >
+              {data.navigation.pages.contact.title}
             </NavbarButton>
           </div>
         </NavBody>
@@ -65,7 +58,11 @@ export function WebAppexNavbar({ className }: { className?: string }) {
         {/* Mobile Navigation */}
         <MobileNav>
           <MobileNavHeader>
-            <NavbarLogo />
+            <NavbarLogo
+              companyFirstName={data.company.firstName}
+              companyLastName={data.company.lastName}
+              homeLink={data.navigation.pages.home.link}
+            />
             <MobileNavToggle
               isOpen={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -98,10 +95,10 @@ export function WebAppexNavbar({ className }: { className?: string }) {
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
-                href="/contact"
+                href={data.navigation.pages.contact.link}
                 as={Link}
               >
-                Contact Us
+                {data.navigation.pages.contact.title}
               </NavbarButton>
             </div>
           </MobileNavMenu>

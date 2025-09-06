@@ -120,7 +120,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
+        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-1 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex",
         className
       )}
     >
@@ -229,16 +229,29 @@ export const MobileNavToggle = ({
   );
 };
 
-export const NavbarLogo = () => {
+export const NavbarLogo = ({
+  companyFirstName = "Gret",
+  companyLastName = "Tech",
+  homeLink = "/",
+  // companyLogo = "/logo.png"
+}: {
+  companyFirstName?: string;
+  companyLastName?: string;
+  homeLink?: string;
+  // companyLogo?: string;
+}) => {
   return (
     <Link
-      href="/"
+      href={homeLink}
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
-      {/* LOGO */}
-      {/* <Image src="/logo.png" alt="logo" width={30} height={30} /> */}
+      {/* TODO: ADD LOGO */}
+      {/* <Image src={companyLogo} alt="logo" width={30} height={30} /> */}
       <span className="font-medium text-black dark:text-white">
-        Gret<span className="text-primary text-xl font-playfair">Tech</span>
+        {companyFirstName}
+        <span className="text-primary text-xl font-playfair">
+          {companyLastName}
+        </span>
       </span>
     </Link>
   );

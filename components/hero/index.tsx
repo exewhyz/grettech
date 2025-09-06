@@ -6,6 +6,8 @@ import { ArrowRight } from "lucide-react";
 import { Pacifico } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import data from "@/constants/data.json";
+import Link from "next/link";
 
 const pacifico = Pacifico({
   subsets: ["latin"],
@@ -163,9 +165,9 @@ function AnimatedPolygon({
 
 // ----------------- Hero Section -----------------
 export default function HeroGeometric({
-  badge = "Web & App Development Experts",
-  title1 = "Build Modern",
-  title2 = "Websites & Apps",
+  badge = data.hero.badge,
+  title1 = data.hero.title.line1,
+  title2 = data.hero.title.line2,
 }: {
   badge?: string;
   title1?: string;
@@ -272,8 +274,7 @@ export default function HeroGeometric({
             animate="visible"
           >
             <p className="text-muted-foreground mx-auto mb-10 max-w-xl px-4 text-base leading-relaxed sm:text-lg md:text-xl">
-              From idea to launch — we design and develop high-performing
-              websites and mobile applications that help businesses grow.
+              {data.hero.description}
             </p>
           </motion.div>
 
@@ -287,16 +288,22 @@ export default function HeroGeometric({
             <Button
               size="lg"
               className="from-primary shadow-primary/10 hover:from-primary/90 rounded-full border-none bg-gradient-to-r to-rose-500 shadow-md hover:to-rose-500/90"
+              asChild
             >
-              Get a Free Quote
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <Link href={data.hero.ctaButtons[0].link}>
+                {data.hero.ctaButtons[0].text}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="border-primary/30 hover:bg-primary/5 rounded-full shadow-sm"
+              asChild
             >
-              View Our Work
+              <Link href={data.hero.ctaButtons[1].link}>
+                {data.hero.ctaButtons[1].text}
+              </Link>
             </Button>
           </motion.div>
         </div>

@@ -14,19 +14,20 @@ import {
   Rocket,
   Target,
 } from "lucide-react";
+import data from "@/constants/data.json";
 
-interface AboutUsProps {
-  title?: string;
-  subtitle?: string;
-  mission?: string;
-  vision?: string;
-  values?: Array<{
-    title: string;
-    description: string;
-    icon: keyof typeof iconComponents;
-  }>;
-  className?: string;
-}
+// interface AboutUsProps {
+//   title?: string;
+//   subtitle?: string;
+//   mission?: string;
+//   vision?: string;
+//   values?: Array<{
+//     title: string;
+//     description: string;
+//     icon: keyof typeof iconComponents;
+//   }>;
+//   className?: string;
+// }
 
 const iconComponents = {
   Users: Users,
@@ -38,42 +39,14 @@ const iconComponents = {
   Target: Target,
 };
 
-const defaultValues: AboutUsProps["values"] = [
-  {
-    title: "Innovation",
-    description:
-      "We embrace new technologies and creative approaches to deliver modern, future-ready solutions.",
-    icon: "Lightbulb",
-  },
-  {
-    title: "Collaboration",
-    description:
-      "We work closely with our clients as partners, turning their vision into reality to help them achieve their goals.",
-    icon: "Users",
-  },
-  {
-    title: "Quality",
-    description:
-      "We are committed to delivering websites and apps that are reliable, scalable, and pixel-perfect.",
-    icon: "Sparkles",
-  },
-  {
-    title: "Impact",
-    description:
-      "Our focus is on creating digital products that make a measurable difference for businesses and their customers.",
-    icon: "Globe",
-  },
-];
+const defaultValues = data.about.values.items.map(value => ({
+  ...value,
+  icon: value.icon as keyof typeof iconComponents
+}));
 
 export default function AboutUs() {
   const aboutData = {
-    title: "About Us",
-    subtitle:
-      "We craft modern websites and mobile apps that help businesses thrive in the digital age.",
-    mission:
-      "Our mission is to empower businesses by building scalable, user-friendly, and impactful digital solutions that drive growth and success.",
-    vision:
-      "We envision a world where every business—big or small—can leverage technology to achieve its full potential online.",
+    ...data.about,
     values: defaultValues,
     className: "relative overflow-hidden py-20",
   };
@@ -100,9 +73,6 @@ export default function AboutUs() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mx-auto mb-16 max-w-2xl text-center"
         >
-          {/* <h1 className="from-foreground/80 via-foreground to-foreground/80 bg-gradient-to-r bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl md:text-6xl">
-            {aboutData.title}
-          </h1> */}
           <h1 className="from-foreground to-foreground/40 mb-4 bg-gradient-to-b bg-clip-text text-3xl font-bold text-transparent md:text-5xl lg:text-6xl">
             {aboutData.title}
           </h1>
@@ -181,11 +151,10 @@ export default function AboutUs() {
             className="mb-12 text-center"
           >
             <h2 className="from-foreground to-foreground/40 mb-4 bg-gradient-to-b bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
-              Our Core Values
+              {data.about.values.title}
             </h2>
             <p className="text-muted-foreground mx-auto text-base mt-4 max-w-2xl">
-              The principles that guide everything we do and every decision we
-              make.
+              {data.about.values.subtitle}
             </p>
           </motion.div>
 
@@ -211,15 +180,7 @@ export default function AboutUs() {
                     icon={<IconComponent className="h-6 w-6" />}
                     title={value.title}
                     description={value.description}
-                    variant={
-                      index === 0
-                        ? "purple"
-                        : index === 1
-                        ? "blue"
-                        : index === 2
-                        ? "amber"
-                        : "rose"
-                    }
+                    variant={value.color as "purple" | "blue" | "amber" | "rose" | "emerald"}
                     glowEffect={true}
                     size="lg"
                   />

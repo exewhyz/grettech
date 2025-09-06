@@ -6,46 +6,21 @@ import { cn } from "@/lib/utils";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { motion } from "motion/react";
 import { Quote } from "lucide-react";
+import data from "@/constants/data.json";
 
+// Using the testimonials from our data.json, and adding two more for variety
 const defaultTestimonials = [
-  {
-    text: "Working with your team was seamless. Our website went from idea to launch in record time without compromising on quality.",
-    imageSrc: "/assets/avatars/avatar-1.webp",
-    name: "Arjun Mehta",
-    username: "@arjdev",
-    role: "Startup Founder",
-  },
-  {
-    text: "The mobile app they delivered exceeded our expectations — fast, modern UI and bug-free. Clients loved it from day one.",
-    imageSrc: "/assets/avatars/avatar-2.webp",
-    name: "Sara Lin",
-    username: "@sara.codes",
-    role: "Product Manager",
-  },
-  {
-    text: "Our e-commerce platform was built and deployed quickly, helping us boost sales. Their technical expertise is unmatched.",
-    imageSrc: "/assets/avatars/avatar-3.webp",
-    name: "Devon Carter",
-    username: "@devninja",
-    role: "Business Owner",
-  },
-  {
-    text: "We needed a custom dashboard for our team. They built it with precision and scalability in mind. Huge time-saver!",
-    imageSrc: "/assets/avatars/avatar-4.webp",
-    name: "Priya Shah",
-    username: "@priyacodes",
-    role: "Operations Head",
-  },
+  ...data.testimonials.items,
   {
     text: "From wireframes to deployment, the process was smooth. They handled design, development, and deployment all in one.",
-    imageSrc: "/assets/avatars/avatar-5.webp",
+    imageSrc: "",
     name: "Leo Martin",
     username: "@leobuilds",
     role: "Entrepreneur",
   },
   {
     text: "Their support team is amazing — always available, always helpful. We now rely on them for all our tech projects.",
-    imageSrc: "/assets/avatars/avatar-6.webp",
+    imageSrc: "",
     name: "Chloe Winters",
     username: "@chloewinters",
     role: "Marketing Lead",
@@ -68,8 +43,8 @@ interface TestimonialProps {
 
 export default function TestimonialsCarousel({
   testimonials = defaultTestimonials,
-  title = "What our users say",
-  subtitle = "From intuitive design to powerful features, our components have become essential tools for developers around the world.",
+  title = data.testimonials.title,
+  subtitle = data.testimonials.subtitle,
   autoplaySpeed = 3000,
   className,
 }: TestimonialProps) {

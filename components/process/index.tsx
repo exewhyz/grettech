@@ -5,45 +5,18 @@ import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";
 import { Rocket, Code, Paintbrush } from "lucide-react";
 import Image from "next/image";
+import data from "@/constants/data.json";
 
-const features = [
-  {
-    step: "Step 1",
-    title: "Discover & Plan",
-    content:
-      "We start by understanding your business goals, audience, and requirements to craft a clear roadmap for your project.",
-    icon: <Rocket className="text-primary h-6 w-6" />,
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
-    step: "Step 2",
-    title: "Design & Develop",
-    content:
-      "Our team designs engaging interfaces and develops scalable, high-performance websites and apps tailored to your brand.",
-    icon: <Paintbrush className="text-primary h-6 w-6" />,
-    image:
-      "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
-    step: "Step 3",
-    title: "Test & Launch",
-    content:
-      "We rigorously test for quality, performance, and security before deploying your solution with confidence.",
-    icon: <Code className="text-primary h-6 w-6" />,
-    image:
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
-    step: "Step 4",
-    title: "Support & Grow",
-    content:
-      "After launch, we provide continuous support, updates, and enhancements to help your business scale.",
-    icon: <Code className="text-primary h-6 w-6" />,
-    image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2070&auto=format&fit=crop",
-  },
-];
+const iconMap = {
+  Rocket: <Rocket className="text-primary h-6 w-6" />,
+  Code: <Code className="text-primary h-6 w-6" />,
+  Paintbrush: <Paintbrush className="text-primary h-6 w-6" />,
+};
+
+const features = data.process.steps.map(step => ({
+  ...step,
+  icon: iconMap[step.icon as keyof typeof iconMap],
+}));
 
 export default function ProcessSteps() {
   const [currentFeature, setCurrentFeature] = useState(0);
@@ -68,11 +41,10 @@ export default function ProcessSteps() {
         <div className="relative mx-auto mb-12 max-w-2xl text-center">
           <div className="relative z-10">
             <h1 className="from-foreground to-foreground/40 mb-4 bg-gradient-to-b bg-clip-text text-3xl font-bold text-transparent md:text-5xl lg:text-6xl">
-              Our 4-Step Process
+              {data.process.title}
             </h1>
             <p className="text-muted-foreground mx-auto max-w-2xl text-base md:text-lg">
-              From strategy to launch, Grettech handles design, development, and
-              growth—end to end.
+              {data.process.subtitle}
             </p>
           </div>
           <div
