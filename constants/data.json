@@ -238,6 +238,88 @@
       }
     ]
   },
+  "works": {
+    "title": "Our Works",
+    "subtitle": "Showcasing our latest projects and creative solutions",
+    "stats": [
+      {
+        "number": "50+",
+        "label": "Projects Completed",
+        "subtitle": "Delivering Excellence"
+      },
+      {
+        "number": "30+",
+        "label": "Happy Clients",
+        "subtitle": "Trust & Satisfaction"
+      },
+      {
+        "number": "5+",
+        "label": "Years Experience",
+        "subtitle": "Industry Expertise"
+      },
+      {
+        "number": "100%",
+        "label": "Success Rate",
+        "subtitle": "Quality Assured"
+      }
+    ],
+    "projects": [
+      {
+        "title": "GretStore - E-commerce Platform",
+        "description": "A modern e-commerce platform built with Next.js 14, featuring real-time inventory, dynamic product filtering, and secure payment processing.",
+        "image": "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&auto=format&fit=crop&q=80",
+        "liveUrl": "https://gretstore.com",
+        "githubUrl": "https://github.com/exewhyz/gretstore",
+        "tags": ["Next.js", "React", "TypeScript", "Stripe", "PostgreSQL"],
+        "featured": true
+      },
+      {
+        "title": "TaskFlow Pro",
+        "description": "Collaborative project management tool with real-time updates, task assignments, and progress tracking capabilities.",
+        "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=80",
+        "liveUrl": "https://taskflow.grettech.com",
+        "githubUrl": "https://github.com/exewhyz/taskflow",
+        "tags": ["React", "Node.js", "Socket.io", "MongoDB", "Express"],
+        "featured": true
+      },
+      {
+        "title": "HealthHub",
+        "description": "Healthcare management system for clinics, featuring appointment scheduling, patient records, and billing management.",
+        "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&auto=format&fit=crop&q=80",
+        "liveUrl": "https://healthhub.grettech.com",
+        "githubUrl": "https://github.com/exewhyz/healthhub",
+        "tags": ["Vue.js", "Django", "PostgreSQL", "Docker"],
+        "featured": false
+      },
+      {
+        "title": "SmartLearn LMS",
+        "description": "Learning management system with video courses, quizzes, and progress tracking for online education.",
+        "image": "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&auto=format&fit=crop&q=80",
+        "liveUrl": "https://smartlearn.grettech.com",
+        "githubUrl": "https://github.com/exewhyz/smartlearn",
+        "tags": ["Next.js", "Node.js", "MongoDB", "AWS"],
+        "featured": true
+      },
+      {
+        "title": "CryptoTrack",
+        "description": "Real-time cryptocurrency tracking and portfolio management application with market insights.",
+        "image": "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=800&auto=format&fit=crop&q=80",
+        "liveUrl": "https://cryptotrack.grettech.com",
+        "githubUrl": "https://github.com/exewhyz/cryptotrack",
+        "tags": ["React", "Redux", "Node.js", "WebSocket"],
+        "featured": false
+      },
+      {
+        "title": "FitnessPal AI",
+        "description": "AI-powered fitness coaching app with workout planning, nutrition tracking, and progress analytics.",
+        "image": "https://images.unsplash.com/photo-1594882645126-14020914d58d?w=800&auto=format&fit=crop&q=80",
+        "liveUrl": "https://fitnesspal.grettech.com",
+        "githubUrl": "https://github.com/exewhyz/fitnesspal",
+        "tags": ["React Native", "TensorFlow", "Python", "Firebase"],
+        "featured": true
+      }
+    ]
+  },
   "footer": {
     "links": {
       "about": [

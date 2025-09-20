@@ -17,7 +17,7 @@ const iconMap = {
   Headphones: <Headphones className="h-6 w-6" />,
 };
 
-const features = data.services.items.map(item => ({
+const features = data.services.items.map((item) => ({
   icon: iconMap[item.icon as keyof typeof iconMap],
   title: item.title,
   desc: item.description,
@@ -29,7 +29,6 @@ export default function Services() {
       <div className="mx-auto max-w-screen-xl px-4 md:px-8">
         <div className="relative mx-auto max-w-2xl text-center">
           <div className="relative z-10">
-
             <h1 className="from-foreground to-foreground/40 mb-4 bg-gradient-to-b bg-clip-text text-3xl font-bold text-transparent md:text-5xl lg:text-6xl">
               {data.services.title}
             </h1>
