@@ -77,14 +77,16 @@ export default function WorksShowcase() {
 
         {/* Projects Grid */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 [perspective:1000px]">
-          {showcaseProjects.map((project, index) => (
-            <ProjectCard
-              key={project.title}
-              project={project}
-              index={index}
-              withHover
-            />
-          ))}
+          {showcaseProjects
+            .filter((p) => !p.archieved)
+            .map((project, index) => (
+              <ProjectCard
+                key={project.title}
+                project={project}
+                index={index}
+                withHover
+              />
+            ))}
         </div>
 
         {/* View All Works Button */}
