@@ -96,37 +96,43 @@
         "title": "Web Development",
         "description": "Responsive, scalable, and high-performing websites built with the latest technologies.",
         "icon": "Globe",
-        "link": "/web-development"
+        "link": "/web-development",
+        "slug": "web-development"
       },
       {
         "title": "App Development",
         "description": "iOS & Android apps tailored to your business needs with seamless user experiences.",
         "icon": "Smartphone",
-        "link": "/app-development"
+        "link": "/app-development",
+        "slug": "app-development"
       },
       {
         "title": "UI/UX Design",
         "description": "Clean, modern, and user-friendly designs that keep your customers engaged.",
         "icon": "Paintbrush",
-        "link": "/web-design"
+        "link": "/web-design",
+        "slug": "web-design"
       },
       {
         "title": "MVP Development",
         "description": "Get your idea to market quickly with lean, scalable MVP solutions.",
         "icon": "Rocket",
-        "link": "/mvp-development"
+        "link": "/mvp-development",
+        "slug": "mvp-development"
       },
       {
         "title": "Custom Solutions",
         "description": "From APIs to dashboards, we build custom digital solutions to streamline your workflow.",
         "icon": "Code",
-        "link": "/custom-solutions"
+        "link": "/custom-solutions",
+        "slug": "custom-solutions"
       },
       {
         "title": "Ongoing Support",
         "description": "Dedicated support and maintenance to ensure your website or app keeps running smoothly.",
         "icon": "Headphones",
-        "link": "/support"
+        "link": "/support",
+        "slug": "support"
       }
     ]
   },
@@ -243,17 +249,17 @@
     "subtitle": "Showcasing our latest projects and creative solutions",
     "stats": [
       {
-        "number": "50+",
+        "number": "20+",
         "label": "Projects Completed",
         "subtitle": "Delivering Excellence"
       },
       {
-        "number": "30+",
+        "number": "16+",
         "label": "Happy Clients",
         "subtitle": "Trust & Satisfaction"
       },
       {
-        "number": "5+",
+        "number": "2+",
         "label": "Years Experience",
         "subtitle": "Industry Expertise"
       },
@@ -265,40 +271,61 @@
     ],
     "projects": [
       {
-        "title": "GretStore - E-commerce Platform",
-        "description": "A modern e-commerce platform built with Next.js 14, featuring real-time inventory, dynamic product filtering, and secure payment processing.",
-        "image": "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&auto=format&fit=crop&q=80",
-        "liveUrl": "https://gretstore.com",
-        "githubUrl": "https://github.com/exewhyz/gretstore",
-        "tags": ["Next.js", "React", "TypeScript", "Stripe", "PostgreSQL"],
-        "featured": true
+        "title": "WorkAura",
+        "description": "A modern landing page built with Next.js 15, framer-motion, and Tailwind CSS, showcasing smooth animations and a sleek design.",
+        "image": "/work/workaura.png",
+        "liveUrl": "https://workauraa.vercel.app/",
+        "githubUrl": "",
+        "tags": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Framer Motion",
+          "Tailwind CSS"
+        ],
+        "featured": true,
+        "archieved": false
       },
       {
-        "title": "TaskFlow Pro",
-        "description": "Collaborative project management tool with real-time updates, task assignments, and progress tracking capabilities.",
-        "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=80",
-        "liveUrl": "https://taskflow.grettech.com",
-        "githubUrl": "https://github.com/exewhyz/taskflow",
-        "tags": ["React", "Node.js", "Socket.io", "MongoDB", "Express"],
-        "featured": true
+        "title": "LinkedInWithDev",
+        "description": "A platform that turn Your personal brand into endless opportunities",
+        "image": "/work/linkedinwithdev.png",
+        "liveUrl": "https://linkedinwithdev.com",
+        "githubUrl": "",
+        "tags": ["React", "Framer Motion", "Tailwind CSS", "EmailJS"],
+        "featured": true,
+        "archieved": false
       },
       {
-        "title": "HealthHub",
-        "description": "Healthcare management system for clinics, featuring appointment scheduling, patient records, and billing management.",
-        "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&auto=format&fit=crop&q=80",
-        "liveUrl": "https://healthhub.grettech.com",
-        "githubUrl": "https://github.com/exewhyz/healthhub",
-        "tags": ["Vue.js", "Django", "PostgreSQL", "Docker"],
-        "featured": false
+        "title": "Live Docs",
+        "description": "Collaborative document editing platform with real-time updates, version control, and user permissions.",
+        "image": "/work/live-docs.png",
+        "liveUrl": "https://livedocks.vercel.app/",
+        "githubUrl": "https://github.com/exewhyz/Live-Docs",
+        "tags": ["Next.js", "Tailwind CSS", "Clerk", "Liveblocks", "Sentry"],
+        "featured": true,
+        "archieved": false
       },
       {
-        "title": "SmartLearn LMS",
-        "description": "Learning management system with video courses, quizzes, and progress tracking for online education.",
-        "image": "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&auto=format&fit=crop&q=80",
-        "liveUrl": "https://smartlearn.grettech.com",
-        "githubUrl": "https://github.com/exewhyz/smartlearn",
-        "tags": ["Next.js", "Node.js", "MongoDB", "AWS"],
-        "featured": true
+        "title": "Viber | AI Website Builder",
+        "description": "AI-powered website builder that creates stunning, responsive websites in minutes using GPT Models",
+        "image": "/work/viber.png",
+        "liveUrl": "https://viber.vercel.app",
+        "githubUrl": "https://github.com/exewhyz/viber",
+        "tags": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Clerk",
+          "Prisma",
+          "PostgreSQL",
+          "Stripe",
+          "Inngest",
+          "GPT"
+        ],
+        "featured": false,
+        "archieved": false
       },
       {
         "title": "CryptoTrack",
@@ -307,7 +334,8 @@
         "liveUrl": "https://cryptotrack.grettech.com",
         "githubUrl": "https://github.com/exewhyz/cryptotrack",
         "tags": ["React", "Redux", "Node.js", "WebSocket"],
-        "featured": false
+        "featured": false,
+        "archieved": true
       },
       {
         "title": "FitnessPal AI",
@@ -316,28 +344,29 @@
         "liveUrl": "https://fitnesspal.grettech.com",
         "githubUrl": "https://github.com/exewhyz/fitnesspal",
         "tags": ["React Native", "TensorFlow", "Python", "Firebase"],
-        "featured": true
+        "featured": true,
+        "archieved": true
       }
     ]
   },
   "footer": {
     "links": {
       "about": [
-        { "text": "Company History", "href": "/company-history" },
-        { "text": "Meet the Team", "href": "/meet-the-team" },
-        { "text": "Employee Handbook", "href": "/employee-handbook" },
-        { "text": "Careers", "href": "/careers" }
+        { "text": "Company History", "href": "about/company-history" },
+        { "text": "Meet the Team", "href": "about/meet-the-team" },
+        { "text": "Employee Handbook", "href": "about/employee-handbook" },
+        { "text": "Careers", "href": "about/careers" }
       ],
       "services": [
-        { "text": "Web Development", "href": "/web-development" },
-        { "text": "Web Design", "href": "/web-design" },
-        { "text": "App Development", "href": "/app-development" },
-        { "text": "Google Ads", "href": "/google-ads" }
+        { "text": "Web Development", "href": "services/web-development" },
+        { "text": "Web Design", "href": "services/web-design" },
+        { "text": "App Development", "href": "services/app-development" },
+        { "text": "Custom Solutions", "href": "services/custom-solutions" }
       ],
       "help": [
-        { "text": "FAQs", "href": "/faqs" },
-        { "text": "Support", "href": "/support" },
-        { "text": "Live Chat", "href": "/live-chat" }
+        { "text": "FAQs", "href": "help/faqs" },
+        { "text": "Support", "href": "help/support" },
+        { "text": "Live Chat", "href": "help/live-chat" }
       ]
     }
   }
