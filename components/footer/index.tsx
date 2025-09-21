@@ -106,9 +106,9 @@ export default function Footer() {
                 <ul className="mt-6 space-y-3 text-sm">
                   {aboutLinks.map(({ text, href }) => (
                     <li key={text}>
-                      <a href={href} className="hover:text-primary transition">
+                      <Link href={href} className="hover:text-primary transition">
                         {text}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -121,9 +121,9 @@ export default function Footer() {
                 <ul className="mt-6 space-y-3 text-sm">
                   {serviceLinks.map(({ text, href }) => (
                     <li key={text}>
-                      <a href={href} className="hover:text-primary transition">
+                      <Link href={href} className="hover:text-primary transition">
                         {text}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
