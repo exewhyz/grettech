@@ -9,7 +9,6 @@ export default async function Page({
   params: Promise<{ serviceName: string }>;
 }) {
   const { serviceName } = await params;
-  // Get service details from data.json using the service parameter
   const service = data?.services?.items?.find?.(
     (item: { slug: string }) => item.slug === serviceName
   );
