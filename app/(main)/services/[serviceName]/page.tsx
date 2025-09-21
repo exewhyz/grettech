@@ -6,11 +6,12 @@ import data from "@/constants/data.json";
 export default async function Page({
   params,
 }: {
-  params: { service: string };
+  params: Promise<{ serviceName: string }>;
 }) {
+  const { serviceName } = await params;
   // Get service details from data.json using the service parameter
   const service = data?.services?.items?.find?.(
-    (item: { slug: string }) => item.slug === params.service
+    (item: { slug: string }) => item.slug === serviceName
   );
 
   // If service is not found, show not available message
@@ -30,7 +31,7 @@ export default async function Page({
           <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background/60 to-background/100 pointer-events-none" />
         </div>
 
-      <div className="container relative mx-auto max-w-3xl px-4 md:px-8">
+        <div className="container relative mx-auto max-w-3xl px-4 md:px-8">
           <div className="mb-10 text-center">
             <span className="text-primary mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium tracking-wide">
               Service Not Available
@@ -39,7 +40,8 @@ export default async function Page({
               Service Not Found
             </h1>
             <p className="text-muted-foreground mx-auto max-w-2xl text-base md:text-lg">
-              The requested service is not available. Please check our other services below.
+              The requested service is not available. Please check our other
+              services below.
             </p>
           </div>
 
@@ -54,8 +56,12 @@ export default async function Page({
                   href={`/services/${service.slug}`}
                   className="block p-4 rounded-lg bg-background/50 hover:bg-background/80 transition-colors"
                 >
-                  <h3 className="text-lg font-medium text-primary">{service.title}</h3>
-                  <p className="text-muted-foreground text-sm">{service.description}</p>
+                  <h3 className="text-lg font-medium text-primary">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm">
+                    {service.description}
+                  </p>
                 </Link>
               ))}
             </div>
@@ -108,7 +114,9 @@ export default async function Page({
             Why choose our {service.title}?
           </h2>
           <p className="text-foreground/80 mb-6">
-            We provide top-notch {service.title} solutions tailored to your business needs. Our team ensures quality, innovation, and customer satisfaction at every step.
+            We provide top-notch {service.title} solutions tailored to your
+            business needs. Our team ensures quality, innovation, and customer
+            satisfaction at every step.
           </p>
           <Button
             asChild
