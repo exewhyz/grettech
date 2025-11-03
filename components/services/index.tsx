@@ -7,6 +7,7 @@ import {
   Headphones,
 } from "lucide-react";
 import data from "@/constants/data.json";
+import Link from "next/link";
 
 const iconMap = {
   Globe: <Globe className="h-6 w-6" />,
@@ -21,6 +22,7 @@ const features = data.services.items.map((item) => ({
   icon: iconMap[item.icon as keyof typeof iconMap],
   title: item.title,
   desc: item.description,
+  link: item.link,
 }));
 
 export default function Services() {
@@ -50,18 +52,17 @@ export default function Services() {
         <div className="relative mt-12">
           <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((item, idx) => (
-              <li
-                key={idx}
-                className="transform-gpu space-y-3 rounded-xl border bg-transparent p-6 [box-shadow:0_-20px_80px_-20px_#ff7aa42f_inset]"
-              >
-                <div className="text-primary w-fit transform-gpu rounded-full border p-4 [box-shadow:0_-20px_80px_-20px_#ff7aa43f_inset] dark:[box-shadow:0_-20px_80px_-20px_#ff7aa40f_inset]">
-                  {item.icon}
-                </div>
-                <h4 className="font-geist text-lg font-bold tracking-tighter">
-                  {item.title}
-                </h4>
-                <p className="text-gray-500">{item.desc}</p>
-              </li>
+              <Link key={idx} href={`services/${item.link}` || ""}>
+                <li className="transform-gpu space-y-3 rounded-xl border bg-transparent p-6 [box-shadow:0_-20px_80px_-20px_#ff7aa42f_inset]">
+                  <div className="text-primary w-fit transform-gpu rounded-full border p-4 [box-shadow:0_-20px_80px_-20px_#ff7aa43f_inset] dark:[box-shadow:0_-20px_80px_-20px_#ff7aa40f_inset]">
+                    {item.icon}
+                  </div>
+                  <h4 className="font-geist text-lg font-bold tracking-tighter">
+                    {item.title}
+                  </h4>
+                  <p className="text-gray-500">{item.desc}</p>
+                </li>
+              </Link>
             ))}
           </ul>
         </div>

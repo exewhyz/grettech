@@ -271,17 +271,34 @@
     ],
     "projects": [
       {
-        "title": "WorkAura",
-        "description": "A modern landing page built with Next.js 15, framer-motion, and Tailwind CSS, showcasing smooth animations and a sleek design.",
-        "image": "/work/workaura.png",
-        "liveUrl": "https://workauraa.vercel.app/",
-        "githubUrl": "",
+        "title": "Nextavest",
+        "description": "NextAvest offers passive commercial real-estate investment opportunities through proven, data-driven strategies—delivering passive income without day-to-day property management.",
+        "image": "/work/nextavest.png",
+        "liveUrl": "https://nextavest.com/",
+        "githubUrl": "https://github.com/exewhyz/nextavest",
         "tags": [
           "Next.js",
           "React",
           "TypeScript",
           "Framer Motion",
           "Tailwind CSS"
+        ],
+        "featured": true,
+        "archieved": false
+      },
+      {
+        "title": "Frontier Plaza",
+        "description": "Frontier Plaza is a 97%-leased, grocery-anchored shopping center in Marietta, Ohio—designed to deliver stable cash-flow, inflation-hedged leases and strategic value-add upside over a 5-7-year hold period.",
+        "image": "/work/frontier-plaza.png",
+        "liveUrl": "https://frontier-plaza.crowdvestllcc.com/",
+        "githubUrl": "https://github.com/exewhyz/crowdvest",
+        "tags": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Framer Motion",
+          "Tailwind CSS",
+          "GHL form"
         ],
         "featured": true,
         "archieved": false
@@ -297,13 +314,32 @@
         "archieved": false
       },
       {
-        "title": "Live Docs",
-        "description": "Collaborative document editing platform with real-time updates, version control, and user permissions.",
-        "image": "/work/live-docs.png",
-        "liveUrl": "https://livedocks.vercel.app/",
-        "githubUrl": "https://github.com/exewhyz/Live-Docs",
-        "tags": ["Next.js", "Tailwind CSS", "Clerk", "Liveblocks", "Sentry"],
-        "featured": true,
+        "title": "Crowdvest",
+        "description": "Crowdvest LLC is a commercial real-estate investment firm enabling investors to build diversified property portfolios and earn passive income through strategic, value-driven deals.",
+        "image": "/work/crowdvest.png",
+        "liveUrl": "https://crowdvestllcc.com/",
+        "githubUrl": "",
+        "tags": [
+          "GHL",
+          "Automations"
+        ],
+        "featured": false,
+        "archieved": false
+      },
+      {
+        "title": "WorkAura",
+        "description": "A modern landing page built with Next.js 15, framer-motion, and Tailwind CSS, showcasing smooth animations and a sleek design.",
+        "image": "/work/workaura.png",
+        "liveUrl": "https://workauraa.vercel.app/",
+        "githubUrl": "",
+        "tags": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Framer Motion",
+          "Tailwind CSS"
+        ],
+        "featured": false,
         "archieved": false
       },
       {
@@ -324,6 +360,16 @@
           "Inngest",
           "GPT"
         ],
+        "featured": false,
+        "archieved": false
+      },
+      {
+        "title": "Live Docs",
+        "description": "Collaborative document editing platform with real-time updates, version control, and user permissions.",
+        "image": "/work/live-docs.png",
+        "liveUrl": "https://livedocks.vercel.app/",
+        "githubUrl": "https://github.com/exewhyz/Live-Docs",
+        "tags": ["Next.js", "Tailwind CSS", "Clerk", "Liveblocks", "Sentry"],
         "featured": false,
         "archieved": false
       },

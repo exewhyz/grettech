@@ -48,7 +48,7 @@ export default function ProjectCard({
         <h3 className="mb-2 text-xl font-semibold tracking-tight">
           {project.title}
         </h3>
-        <p className="text-muted-foreground mb-4 text-sm">
+        <p className="text-muted-foreground/80 mb-4 text-sm">
           {project.description}
         </p>
 
