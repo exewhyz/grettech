@@ -7,6 +7,7 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "motion/react";
+// import Image from "next/image";
 import Link from "next/link";
 
 import React, { useRef, useState } from "react";
@@ -238,15 +239,14 @@ export const NavbarLogo = ({
   companyFirstName?: string;
   companyLastName?: string;
   homeLink?: string;
-  // companyLogo?: string;
+  companyLogo?: string;
 }) => {
   return (
     <Link
       href={homeLink}
-      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
+      className="relative z-20 mr-4 flex items-center text-sm font-normal text-black"
     >
-      {/* TODO: ADD LOGO */}
-      {/* <Image src={companyLogo} alt="logo" width={30} height={30} /> */}
+      {/* <Image src={companyLogo} alt="logo" width={50} height={30} className="h-12 w-12"/> */}
       <span className="font-medium text-black dark:text-white">
         {companyFirstName}
         <span className="text-primary text-xl font-playfair">

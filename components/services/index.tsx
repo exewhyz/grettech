@@ -52,8 +52,12 @@ export default function Services() {
         <div className="relative mt-12">
           <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((item, idx) => (
-              <Link key={idx} href={`services/${item.link}` || ""}>
-                <li className="transform-gpu space-y-3 rounded-xl border bg-transparent p-6 [box-shadow:0_-20px_80px_-20px_#ff7aa42f_inset]">
+              <Link
+                key={idx}
+                href={`/services/${item.link}` || "/services/not-found"}
+                className="transform-gpu space-y-3 rounded-xl border bg-transparent p-6 [box-shadow:0_-20px_80px_-20px_#ff7aa42f_inset] hover:[box-shadow:0_-20px_80px_-10px_#ff7aa43f_inset] dark:[box-shadow:0_-20px_80px_-20px_#ff7aa40f_inset] hover:dark:[box-shadow:0_-20px_80px_-10px_#ff7aa41f_inset] transition-shadow duration-300"
+              >
+                <li>
                   <div className="text-primary w-fit transform-gpu rounded-full border p-4 [box-shadow:0_-20px_80px_-20px_#ff7aa43f_inset] dark:[box-shadow:0_-20px_80px_-20px_#ff7aa40f_inset]">
                     {item.icon}
                   </div>

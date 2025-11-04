@@ -38,6 +38,7 @@ export function WebAppexNavbar({ className }: { className?: string }) {
           <NavbarLogo
             companyFirstName={data.company.firstName}
             companyLastName={data.company.lastName}
+            companyLogo={data.company.logo}
             homeLink={data.navigation.pages.home.link}
           />
           <NavItems items={navItems} />

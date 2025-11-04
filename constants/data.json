@@ -7,7 +7,7 @@
     "tagline": "Your Digital Partner",
     "slogan": "Empowering Businesses with Digital Solutions",
     "description": "We craft modern, scalable, and visually stunning web solutions to help businesses grow digitally.",
-    "logo": "/images/logo.png"
+    "logo": "/grettech_logo_light.png"
   },
   "contact": {
     "email": "contact@grettech.com",
@@ -398,21 +398,21 @@
   "footer": {
     "links": {
       "about": [
-        { "text": "Company History", "href": "about/company-history" },
-        { "text": "Meet the Team", "href": "about/meet-the-team" },
-        { "text": "Employee Handbook", "href": "about/employee-handbook" },
-        { "text": "Careers", "href": "about/careers" }
+        { "text": "Company History", "href": "/about/company-history" },
+        { "text": "Meet the Team", "href": "/about/meet-the-team" },
+        { "text": "Employee Handbook", "href": "/about/employee-handbook" },
+        { "text": "Careers", "href": "/about/careers" }
       ],
       "services": [
-        { "text": "Web Development", "href": "services/web-development" },
-        { "text": "Web Design", "href": "services/web-design" },
-        { "text": "App Development", "href": "services/app-development" },
-        { "text": "Custom Solutions", "href": "services/custom-solutions" }
+        { "text": "Web Development", "href": "/services/web-development" },
+        { "text": "Web Design", "href": "/services/web-design" },
+        { "text": "App Development", "href": "/services/app-development" },
+        { "text": "Custom Solutions", "href": "/services/custom-solutions" }
       ],
       "help": [
-        { "text": "FAQs", "href": "help/faqs" },
-        { "text": "Support", "href": "help/support" },
-        { "text": "Live Chat", "href": "help/live-chat" }
+        { "text": "FAQs", "href": "/help/faqs" },
+        { "text": "Support", "href": "/help/support" },
+        { "text": "Live Chat", "href": "/help/live-chat" }
       ]
     }
   }
