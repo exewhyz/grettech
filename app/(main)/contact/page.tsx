@@ -140,29 +140,26 @@ export default function ContactPage() {
                 <Group transition={{ delay: 0.6 }}>
                   <Label htmlFor="mobile">Mobile</Label>
                   <Input
-                    id="mobile"
-                    type="tel"
-                    min={0}
-                    max={9999999999}
-                    minLength={10}
-                    maxLength={10}
-                    value={mobile}
-                    onChange={(e) => setMobile(e.target.value)}
-                    placeholder="Enter your mobile number"
-                    required
-                    className="appearance-none"
+                  id="mobile"
+                  inputMode="numeric"
+                  value={mobile}
+                  onChange={(e) => setMobile(e.target.value)}
+                  placeholder="Enter your mobile number"
+                  pattern="[0-9]{10}"
+                  required
+                  className="appearance-none"
                   />
                 </Group>
 
                 <Group transition={{ delay: 0.7 }}>
                   <Label htmlFor="message">Message</Label>
                   <Textarea
-                    id="message"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Enter your message"
-                    required
-                    className="h-40 resize-none"
+                  id="message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  placeholder="Enter your message"
+                  required
+                  className="h-40 resize-none"
                   />
                 </Group>
 
