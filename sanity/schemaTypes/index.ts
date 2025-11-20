@@ -9,7 +9,6 @@ import project from './project'
 import testimonial from './testimonial'
 import hero from './hero'
 import about from './about'
-import value from './value'
 import processStep from './processStep'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
@@ -23,7 +22,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     testimonial,
     hero,
     about,
-    value,
     processStep,
   ],
 }
